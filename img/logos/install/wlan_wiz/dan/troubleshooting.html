@@ -1,0 +1,327 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<title>Fejlfinding</title>
+
+
+
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+
+
+
+
+</head>
+<body bgcolor="#FFFFFF">
+<a name="top"></a>
+<!--top bar-->
+<IFRAME src="top_bar.html" name="top_bar" scrolling="NO" frameborder="0" width="100%" height="60"></IFRAME>
+<!--top bar end-->
+
+<br>
+
+
+<!--text-->
+<table border="0" cellspacing="0" cellpadding="5" width="550">
+<tr><td colspan=2><span style="font-size: 120%;"><b>Fejlfinding</b></span>
+</td></tr>
+<tr><td width="30"></td><td>
+Beskrivelse af problemet:<br>
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+1.</td><td>
+<a href="#1"><font size="-1">Den trådløse enhed kan ikke oprette forbindelse til det trådløse netværk.  </font></a>
+</td></tr><tr><td valign="top">
+2.</td><td>
+<a href="#2"><font size="-1">Ved søgning fandt guiden ikke finde det trådløse netværk.  </font>
+</td></tr><tr><td valign="top">
+3.</td><td>
+<a href="#3"><font size="-1">Signalstyrken er lav, eller der er sommetider intet signal.  </font>
+</td></tr><tr><td valign="top">
+4.</td><td><a href="#4">
+<font size="-1">(Kun for brugere, som ikke anvender et USB- eller LAN-kabel til at konfigurere den trådløse enhed). Jeg lavede en fejl, da jeg konfigurerede de trådløse indstillinger, men når jeg kører guiden til trådløs enhed igen for at indtaste de rigtige indstillinger, kan guiden ikke finde nogen enhed.  
+</font>
+</td></tr><tr><td valign="top">
+5.</td><td>
+<a href="#5">
+<font size="-1">Installationsguiden til trådløs enhed henviser til et access point. Problemet er, at jeg ikke bruger et access point. Jeg bruger en trådløs router eller en switch til at oprette forbindelse til det trådløse netværk.
+</font>
+</td></tr><tr><td valign="top">
+6.</td><td>
+<a href="#6">
+<font size="-1">Jeg ved ikke, hvilke trådløse netværksindstillinger jeg skal bruge. Hvad skal jeg gøre?</font>
+
+</td></tr><tr><td valign="top">
+7.</td><td>
+<a href="#7">
+<font size="-1">Jeg har konfigureret enheden til at bruge en DHCP-server. Men enheden modtager imidlertid ikke en IP-adresse fra DHCP-serveren. Den anvender en 169.254.x.x- IP-adresse.</font>
+
+</td></tr></table>
+
+
+
+
+<hr>
+
+
+
+<a name="1"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+1.</td><td>
+Den trådløse enhed kan ikke oprette forbindelse til det trådløse netværk.
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+<b><span style="color: #660000;">SSID</span></b><br>
+
+Kontroller, at du har angivet SSID-oplysningerne også kaldet netværksnavnet, korrekt ved konfigureringen af den trådløse enhed. Husk også, at der ved SSID-oplysninger skelnes mellem store og små bogstaver. Hvis dit SSID f.eks er ”Wireless Network”, men du indtaster ”wireless network” ved konfigureringen af den trådløse enhed, kan maskinen ikke oprette forbindelse til netværket, eftersom W og N i ”Wireless Network” er store bogstaver.
+
+<br><br>
+<b><span style="color: #660000;">NØGLE</span></b><br>
+Kontrollér også, at du har indtastet den korrekte WEP/TKIP-nøgle ved konfigureringen af den trådløse enhed. Indtast den korrekte nøgle, og sørg for, at du indtaster det rigtige antal tegn, afhængigt af den nøgle, der oprindeligt blev brugt ved konfigureringen af det trådløse netværk. Hvis du ikke har indtastet den korrekte information, anbefaler vi i begge tilfælde, at du nulstiller de trådløse indstillinger på enheden til fabriksindstillingerne og genstarter Installationsguiden til trådløs enhed. Yderligere oplysninger om nulstilling af enhedens trådløse indstillinger finder du i dokumentationen, der fulgte med den trådløse enhed.
+
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+<a name="2"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+2.</td><td>
+Ved søgning fandt guiden ikke finde det trådløse netværk.  
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+Hvis den trådløse enhed er uden for det trådløse netværks rækkevidde, skal du flytte den tættere på accesspointet.
+<br>
+<br>
+
+Hvis den trådløse enhed er inden for rækkevidde af det trådløse netværk, skal du kontrollere, at accesspointet ikke skjuler sit SSID-netværksnavn. Hvis det skjuler SSID-netværksnavnet, skal du manuelt indtaste det under konfigurationen af den trådløse enhed. Hvis du er i tvivl om, hvordan det skal kontrolleres, skal du kontakte din systemadministrator, internetudbyder eller producenten af accesspointet.
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+<a name="3"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+3.</td><td>
+Signalstyrken er lav, eller der er sommetider intet signal.
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+Trådløse enheder påvirkes af omgivelserne, og signalstyrken kan ændres af møbler, vægge eller gulve, der befinder sig mellem den trådløse enhed og accesspointet, den forsøger at kommunikere med. Hvis du har problemer med signalstyrken, kan du prøve at flytte den trådløse enhed tættere på accesspointet for at forbedre signalstyrken.
+
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+
+<a name="4"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+4.</td><td>
+(Kun for brugere, som ikke anvender et USB- eller LAN-kabel til at konfigurere den trådløse enhed). Jeg lavede en fejl, da jeg konfigurerede de trådløse indstillinger, men når jeg kører guiden til trådløs enhed igen for at indtaste de rigtige indstillinger, kan guiden ikke finde nogen enhed.
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+Software-guiden kan muligvis ikke finde den trådløse enhed, da indstillingerne for trådløs på computeren og enheden er helt forskellige. Prøv at nulstille de trådløse indstillinger på enheden til fabriksindstillingerne, og genstart guiden.
+<br>
+<br>
+Du kan finde flere oplysninger om nulstilling af enhedens trådløse indstillinger til fabriksindstillinger i brugsanvisningen.
+
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+
+<a name="5"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+5.</td><td>
+Installationsguiden til trådløs enhed henviser til et access point. Problemet er, at jeg ikke bruger et access point. Jeg bruger en trådløs router eller en switch til at oprette forbindelse til det trådløse netværk.
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+Vi har brugt den generelle term ”access point” for at forenkle tingene. Udskift ordet adgangspunkt med den relevante betegnelse.
+
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+
+<a name="6"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+6.</td><td>
+Jeg ved ikke, hvilke trådløse netværksindstillinger jeg skal bruge. Hvad skal jeg gøre?
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+Hvis du konfigurerer printerens/multifunktionsmaskinens trådløse indstillinger forkert, vil den ikke fungere korrekt. Kontakt systemadministratoren for at få oplyst de korrekte trådløse indstillinger.
+
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+
+
+
+
+<a name="7"></a>
+</td></tr>
+
+<tr><td colspan=2 height=30></td><tr>
+
+<tr><td width="30"></td><td>
+
+<b>Beskrivelse af problemet:</b><br>
+
+
+
+<table border="0" cellspacing="0" cellpadding="4"><tr><td valign="top">
+7.</td><td>
+Jeg har konfigureret enheden til at bruge en DHCP-server. Men enheden modtager imidlertid ikke en IP-adresse fra DHCP-serveren. Den anvender en 169.254.x.x- IP-adresse.
+</td></tr></table>
+
+
+
+
+<br>
+<table border="0" cellspacing="0" cellpadding="4"><tr><td colspan=2>
+<b>Løsning:</b>
+</td></tr><tr><td width=10></td><td>
+Det tyder på, at den trådløse enhed ikke kan få adgang til det trådløse netværk og ikke kan få en IP-adresse fra DHCP-serveren. Kontroller, at du har angivet de trådløse netværksindstillinger på den trådløse enhed korrekt, og at accesspointet er konfigureret til at tillade at enheden får adgang til det trådløse netværk.
+
+</td></tr>
+<tr><td colspan=2 ALIGN="right"  VALIGN="bottom" height="45">
+<a href="#top"><span style="font-size: 80%;">tilbage til toppen</span></a>
+</td></tr></table>
+
+<hr>
+<!--********************-->
+
+
+
+
+</td></tr>
+</table>
+
+<!--Copyright-->
+<IFRAME src="copy.html" name="copyright" align="middle" scrolling="NO" frameborder="0" width="100%" height="40"></IFRAME>
+
+</body>
+</html>

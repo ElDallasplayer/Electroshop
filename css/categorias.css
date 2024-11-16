@@ -1,0 +1,47 @@
+
+.boton_ver_ofertas{
+    border-radius: 0.7rem;
+    border: 0px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--rojo-electronorte);
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.boton_ver_ofertas:hover{
+    transform: scale(1.1);
+}
+
+
+.boton_ver_precios_menor{
+    border-radius: 0.7rem;
+    border: 0px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--negro-electronorte);
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.boton_ver_precios_menor:hover{
+    transform: scale(1.1);
+}
+
+
+.boton_ver_precios_mayor{
+    border-radius: 0.7rem;
+    border: 0px;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--negro-electronorte);
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.boton_ver_precios_mayor:hover{
+    transform: scale(1.1);
+}

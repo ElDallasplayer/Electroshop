@@ -1,0 +1,47 @@
+<div class="component">
+  <link href="../css/components/chat.css" rel="stylesheet" />
+
+  <div id="">
+    <div class="chat-container d-none">
+        <div class="title-container-chat">
+            <div class="row p-0 m-0 w-100" style="height: 100%;">
+                <div class="col-2 p-0 m-0 d-flex justify-content-center align-items-center" style="margin-left: 5px !important;">
+                    <div class="imagen-chat-container shadow-short">
+                        <img src="../img/logos/logo-chat.png" class="imagen-chat" width="100%"/>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <p class="nombre-chat">Electronorte Outlet</p>
+                    <br/>
+                    <p class="estado-chat">En linea</p>
+                    <i class="mdi mdi-share-all go_whatsapp" title="Hablar por WhatsApp"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row w-100 p-0 m-0 shadow-interior contenedor-chats bar-styled">
+            <div class="col-12 p-0 m-0" id="lista_mensajes_enviadosyrecibidos">
+                <div class="row m-0 p-0 mensaje-recibido" style="height: auto !important;">
+                    <p class="text-mensaje-recibido shadow-short">
+                        Estamos aqui para ti!
+                        No dudes en consultar!
+                        Para una mejor atencion agregue su numero de tefono a la consulta.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-message-container shadow-short">
+            <div class="row p-0 m-0 w-100 justify-content-center contenedor-input-send">
+                <div class="col-10 p-0 m-0 d-flex justify-content-center align-items-center">
+                    <input type="text" class="input-chat form-control" id="text-message">
+                </div>
+                <div class="col-2 p-0 m-0 d-flex justify-content-center align-items-center">
+                    <i class="mdi mdi-send send-message-button"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <i class="mdi mdi-whatsapp chat-principal-icon" title="Contactanos" style="color: #25D366;"></i>
+  </div>
+
+  <script src="../js/components/chat.js" type="module"></script>
+</div>

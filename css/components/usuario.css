@@ -1,0 +1,310 @@
+.usuario_form_container{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+}
+
+html{
+    overflow: hidden !important;
+}
+
+#cerrar-usuario-login{
+    position: absolute;
+    height: 100vh;
+    z-index: 10;
+    background-color: white;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+#contenedor_usuario_login{
+    position: absolute;
+    width: 100%;
+    background-color: white;
+    width: 30% !important;
+    top: 5px !important;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0.5rem;
+    height: 85vh;
+    z-index: 100000000000000000;
+    overflow-x: hidden !important;
+}
+
+.icono-cerrar-formulario{
+    position: absolute;
+    left: 90%;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.bar-styled{
+    overflow: scroll !important;
+}
+
+.contenedor_imagen_electronorte{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-electronorte-login{
+    position: relative;
+    height: 100px;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 2rem !important;
+}
+
+
+.contenedor_login_data{
+    padding-bottom: 5rem;
+}
+
+.contenedor_datos_login{
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.titulo-login-form{
+    display: flex;
+    justify-content: center;
+}
+.titulo-login-form-text{
+    font-size: 20px;
+    padding-bottom: 2rem;
+}
+
+.contenedor_email_login{
+    position: relative;
+    top: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.label-form-login{
+    top: -25px;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.label-form-login-in{
+    top: -25px;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.input_email_login{
+    position: absolute;
+    margin-bottom: 30px !important;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+}
+
+.contenedor_password_login{
+    position: relative;
+    top: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+.input_password_login{
+    position: absolute;
+    margin-bottom: 30px !important;
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px;
+}
+
+.boton-ingresar-cuenta{
+    position: absolute;
+    left: 50%;
+    right: 0;
+    margin: auto;
+    transform: translate(-50%,-100%);
+    display: flex;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 10px;
+    margin-top: 2rem;
+    background-color: var(--rojo-electronorte);
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    transition: 0.1s;
+}
+.boton-ingresar-cuenta:hover{
+    outline: 2px solid var(--bs-gray-400);
+}
+
+.subtitulo-login-form{
+    margin-top: 2rem;
+}
+
+.subtitulo-login-form-text{
+    display: flex;
+    margin-top: 2rem !important;
+    justify-content: center;
+}
+
+.boton-registrarse-cuenta{
+    position: absolute;
+    padding: 10px;
+    background-color: var(--negro-electronorte);
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: bold;
+    left: 50%;
+    transform: translate(-50%,-20%);
+    cursor:pointer;
+    transition: 0.1s;
+}
+
+.boton-registrarse-cuenta:hover{
+   outline: 2px solid var(--bs-gray-400);
+}
+
+.contenedor_email{
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 25%;
+}
+
+.input-dato-usuario{
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
+.contenedor_password{
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.input-dato-password{
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
+.input-macheo-password{
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
+.disabled{
+    background-color: var(--bs-gray-400) !important;
+}
+
+.contenedor-telefono{
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.input-dato-telefono{
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
+.label-numero-celular{
+    position: absolute;
+    width: 30%;
+    top: 10px;
+}
+
+.input-dato-telefono:hover:after{
+    content: "";
+    position: relative;
+    right: 0;
+    background-color: red;
+}
+
+.boton-registrarse-ingresar-cuenta{
+    margin-top: 1rem !important;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--negro-electronorte);
+    color: white;
+    font-size: bold;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.boton-registrarse-ingresar-cuenta:hover{
+    outline: 2px solid var(--bs-gray-400);
+}
+
+.boton-registrarse-ingresar-cuenta-ingresar{
+    margin-top: 1rem !important;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: var(--rojo-electronorte);
+    color: white;
+    font-size: bold;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.boton-registrarse-ingresar-cuenta-ingresar:hover{
+    outline: 2px solid var(--bs-gray-400);
+}
+
+.ver-password{
+    position: absolute;
+    right: 35px;
+    z-index: 1000;
+    top: 10%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contenedor_logout_usuario{
+    margin-top: 4rem;
+    height: 80px !important;
+}
+
+.contenendor_boton_logout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton_logout_usuario{
+    padding: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    background-color: var(--rojo-electronorte);
+    border-radius: 3rem;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.boton_logout_usuario:hover{
+    transform: scale(1.05);
+}

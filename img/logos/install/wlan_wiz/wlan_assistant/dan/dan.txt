@@ -1,0 +1,42 @@
+WA0001,Installationsguide til trådløs enhed
+WA0002,1.02
+WA0101,Vent...
+WA0201,Installationsbekræftelse
+WA0202,Under installation vil de trådløse indstillinger på din computer eller trådløse accesspoint automatisk blive registreret. Før tilslutning af den trådløse enhed til et firmanetværk, bekræft dette med netværksadministratoren.
+WA0203,Bemærk at guiden vil midlertidigt afbryde din computer fra det trådløse netværk, så den kan tilslutte sig til din enhed.  Under dette vil den blive afbrudt fra alle netværkservices, inklusiv internettet.
+WA0204,Kontrolleret og bekræftet
+WA0301,Registrerer eksisterende trådløse netværksindstillinger på din computer
+WA0302,De trådløse netværksindstillinger på din computer eller trådløse accesspoint er blevet registreret.
+WA0303,Det registrerede trådløse netværksnavn (trådløst accesspoint/routernavn):
+WA0304,SSID:
+WA0305,Vil du tilslutte enheden til dette trådløse netværk?
+WA0306,Ja, jeg vil tilslutte enheden til dette trådløse netværk.
+WA0307,Nej, jeg vil tilslutte enheden til et andet trådløst netværk.
+WA0401,Aktivér trådløs
+WA0402,Du skal nu aktivere trådløst netværk på enheden ved brug af dens kontrolpanel. Et andet vindue vil åbne, med yderligere detaljer om hvordan det gøres.
+WA0403,Når du aktiverer trådløst netværk på enheden, vil denne guide automatisk gennemføre opsætningen.
+WA0404,(*) Hvis skærmbilledet "Set Network Location " (Indstil netværksplacering) optræder, klik "Cancel" (Annuller).
+WA0501,Sender indstillinger.....Vent....
+WA0601,Kontroller tilslutningsresultatet for "Trådløs opsætning"
+WA0602,Siden "WLAN Report" vil udskrives på enheden. Find <Connection> (Tilslutning) på siden, og tjek beskrivelsen for at bekræfte resultatet af tilslutningen.
+WA0603,* Denne udskrift kan tage op til 2 minutter.
+WA0604,Vælg resultatet fra listen over valgmuligheder herunder og klik "Next" (Næste).
+WA0605,"Connection : OK"
+WA0606,"Connection : Failed"
+WA4001,Forlad opsætning
+WA4002,Opsætning er ikke gennemført.
+WA4003,Hvis du forlader dette opsætningsprogram, vil den trådløse enhed ikke blive konfigureret.
+WA4004,For at fortsætte dette opsætningsprogram, klik på "Fortsæt".
+WA4005,For at forlade opsætningsprogrammet, klik på "Afslut".
+WA5001,Kunne ikke finde enheden
+WA5002,Vil du prøve igen ved brug af samme opsætningsproces eller prøve noget andet?
+WA5003,Prøv igen
+WA5004,Hvis du ønsker den samme opsætningsproces igen, anbefaler vi, at du prøver at deaktivere alt sikkerhedssoftware, som f.eks. en firewall, som kan blokere for opsætningen.
+WA5005,Prøv noget andet
+WA5101,Kunne ikke tilslutte
+WA5102,Installationsprogrammet vil tilbyde nogle muligheder, for at anvende andre tilslutningsmetoder.  Klik "Next" (Næste) for at fortsætte.
+WA9901,< Tilbage
+WA9902,Annuller
+WA9903,Næste >
+WA9904,Afslut
+WA9905,Fortsæt

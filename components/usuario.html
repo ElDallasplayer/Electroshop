@@ -1,0 +1,179 @@
+<link href="../css/components/usuario.css" rel="stylesheet">
+
+<div class="row p-0 m-0 w-100" id="cerrar-usuario-login" onclick='CerrarUsuario()'>
+    <script>function CerrarUsuario(){$("#usuario_form_container").addClass("d-none").empty()}</script>
+</div>
+<div class="component row bar-styled shadow-short" id="contenedor_usuario_login">
+
+    <div class="mdi mdi-close icono-cerrar-formulario" onclick='CerrarUsuario()'></div>
+
+    <div class="contenedor_imagen_electronorte">
+        <img class="imagen-electronorte-login" src="../img/logos/logo electronorte png.png">
+    </div>
+
+    <div class="contenedor_login_data">
+
+        <div class="contenedor_datos_login">
+            <div class="titulo-login-form">
+                <p class="titulo-login-form-text">Ingresar a mi cuenta</p>
+            </div>
+
+            <div class="contenedor_email_login">
+                <label class="label-form-login-in">Email</label>
+                <input class="input_email_login" type="email" placeholder="Correo electronico..." />
+            </div>
+            <div class="contenedor_password_login">
+                <i class="mdi mdi-eye boton-ver-password ver-password"></i>
+                <label class="label-form-login-in">Contraseña</label>
+                <input class="input_password_login" type="password" placeholder="Contraseña..." />
+            </div>
+            <div class="boton-ingresar-cuenta">Ingresar</div>
+        </div>
+        
+
+        <div class="subtitulo-login-form">
+            <p class="subtitulo-login-form-text">¿Aun no tienes una cuenta?</p>
+        </div>
+        <div class="boton-registrarse-cuenta">
+            Registrate!
+        </div>
+        <script>
+            $(".boton-registrarse-cuenta").on("click", () =>{
+                $(".contenedor_datos_login").slideUp("fast")
+                $(".form-container").removeClass("d-none").slideDown()
+                $(".boton-registrarse-cuenta").addClass("d-none")
+            })
+        </script>
+        <div class="form-container d-none">
+            <div class="contenedor_email">
+                <label class="label-form-login">Correo</label>
+                <input type="email" class="input-dato-usuario input-obligatorio" placeholder="Correo electronico..." />
+            </div>
+            <div class="contenedor_password">
+                <i class="mdi mdi-eye boton-ver-password ver-password" style="right: 15px !important;"></i>
+                <label class="label-form-login">Contraseña</label>
+                <input class="input-dato-password input-obligatorio" type="password" placeholder="Contraseña..." />
+            </div>
+            <div class="contenedor_password">
+                <i class="mdi mdi-eye boton-ver-password ver-password" style="right: 15px !important;"></i>
+                <label class="label-form-login">Reptir contraseña</label>
+                <input class="input-macheo-password input-obligatorio" type="password" placeholder="Contraseña..." />
+            </div>
+            <div class="contenedor-telefono">
+                <label class="label-form-login">Telefono</label>
+                <input type="text" class="input-dato-telefono input-obligatorio" placeholder="Numero de celular..." title="Si bien este campo no es obligatorio, es recomendable completrlo para mejorar la calidad de atencion. Muchas gracias!"/>
+            </div>
+            <div class="boton-registrarse-ingresar-cuenta" id="boton-registrarse-e-ingresar">Registrarse e ingresar</div>
+            <div class="boton-registrarse-ingresar-cuenta-ingresar">Quiero usar mi cuenta</div>
+            <script>
+                $(".boton-registrarse-ingresar-cuenta-ingresar").on("click", () => {
+                    $(".boton-registrarse-cuenta").removeClass("d-none")
+                    $(".contenedor_datos_login").slideDown("fast")
+                    $(".form-container").slideUp("fast").add("d-none")
+                })
+            </script>
+        </div>
+    </div>
+
+    <div class="contenedor_logout_usuario d-none">
+        <div class="contenendor_boton_logout">
+            <div class="boton_logout_usuario shadow-short">
+                Cerrar sesion
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $.get( DireccionPeticiones() + "/Home/UsuarioEstaLogueado?guid=" + ObtenerGuidUser(), (data) =>{
+            console.log(ObtenerGuidUser())
+            if(data.isLogin){
+                $(".contenedor_logout_usuario").removeClass("d-none");
+                $(".contenedor_login_data").addClass("d-none");
+            }
+        })
+
+        $(".input_email_login").on("change", (e) =>{
+            $(".input-dato-usuario").val($(".input_email_login").val())
+        })
+
+        $(".input_password_login").on("change", (e) =>{
+            $(".input-dato-password").val($(".input_password_login").val())
+        })
+
+        $(".ver-password").on(
+        {
+            mouseenter: function (e) {
+                $(".input-dato-password").attr("type","text")
+                $(".input_password_login").attr("type","text")
+                $(".input-macheo-password").attr("type","text")
+            },
+            mouseleave: function (e) {
+                $(".input-dato-password").attr("type","password")
+                $(".input_password_login").attr("type","password")
+                $(".input-macheo-password").attr("type","password")
+            }
+        })
+
+        $(".boton-ingresar-cuenta").on("click", () =>{
+            ValidarCuenta()
+        })
+
+        $(".boton_logout_usuario").on("click", () =>{
+            CerrarSesion(ObtenerGuidUser());
+        })
+
+        $(".boton-registrarse-ingresar-cuenta").on("click", () => {
+            if(ValidarDatosCrearUsuario() && $(".input-dato-telefono").val().length > 6){
+                let email = $(".input-dato-usuario").val();
+                            let password = $(".input-dato-password").val();
+                            let telefono = $(".input-dato-telefono").val();
+                            $.get( DireccionPeticiones() + "/Home/RegistrarUsuario?email=" + email + "&password=" + password + "&numerotelefono=" + telefono, (data) => {
+                                if(data.result == "OK"){
+                                    IniciarSesion(email,password)
+                                    alert(data.message);
+                                    $(".boton-registrarse-ingresar-cuenta-ingresar").click()
+                                    $(".input_email_login").val(email)
+                                    $(".input_password_login").val(password)
+                                    $(".input-obligatorio").val("")
+                                }
+                                else
+                                {
+                                    alert(data.message);
+                                }
+                            })
+            }       
+        })
+
+        function ValidarDatosCrearUsuario(){
+            if($(".input-dato-usuario").val() != "" && VerificarIgualdadPassword() && $(".input-dato-telefono").val() != ""){
+                return true
+            }
+
+            if($(".input-dato-usuario").val() == ""){$(".input-dato-usuario").focus()}
+            if($(".input-dato-telefono").val() == ""){$(".input-dato-telefono").focus()}
+            return false
+        }
+
+        function VerificarIgualdadPassword(){
+            if($(".input-macheo-password").val() == $(".input-dato-password").val() ){
+                console.log("Son iguales")
+                return true
+            }
+            return false
+        }
+
+        function ValidarCuenta(){
+            let user= $(".input_email_login").val();
+            let password = $(".input_password_login").val();
+            $.get(DireccionPeticiones() + "/Home/ConsultarExistenciaUsuario?user=" + user + "&password=" + password, (data) =>{
+                if(data.userExist){
+                    IniciarSesion(user,password)
+                }else{
+                    $(".boton-registrarse-cuenta").click()
+                }
+            })
+        }
+
+    </script>
+    <script src="../js/components/usuario.js" type="module"></script> 
+</div>

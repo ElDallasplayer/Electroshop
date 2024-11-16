@@ -1,0 +1,42 @@
+WA0001,Installationsguide för trådlösa enheter
+WA0002,1.02
+WA0101,Vänta...
+WA0201,Installationsbekräftelse
+WA0202,Under installationen identifieras de trådlösa inställningarna på datorn eller den trådlösa åtkomstpunkten automatiskt. Innan du ansluter den trådlösa enheten till ett företagsnätverk, bekräfta med nätverksadministratören.
+WA0203,Observera att guiden tillfälligt kopplar bort enheten från ditt trådlösa nätverk så att det kan ansluta till din enhet. Under den här tiden kopplas enheten bort från alla nätverkstjänster, inklusive Internet.
+WA0204,Kontrollerat och bekräftat
+WA0301,Identifierar befintliga trådlösa nätverksinställningar på din dator
+WA0302,De trådlösa nätverksinställningarna för din dator eller trådlösa åtkomstpunkt har identifierats.
+WA0303,Namnet på det identifierade trådlösa nätverket (namn på trådlös åtkomstpunkt/router):
+WA0304,SSID:
+WA0305,Vill du ansluta enheten till detta trådlösa nätverk?
+WA0306,Ja, jag vill ansluta enheten till detta trådlösa nätverk.
+WA0307,Nej, jag vill ansluta enheten till ett annat trådlöst nätverk.
+WA0401,Aktivera trådlöst
+WA0402,Du ska nu aktivera den trådlösa nätverksfunktionen på enheten genom att använda dess kontrollpanel. Ytterligare ett fönster bör öppnas med ytterligare information om hur du gör detta.
+WA0403,När du aktiverar trådlös nätverksfunktion på enheten kommer den här guiden att fortsätta installationen automatiskt.
+WA0404,(*) Om skärmen "Ange nätverksplats" visas, klicka på "Avbryt".
+WA0501,Skickar inställningar......Vänta...
+WA0601,Kontrollera anslutningsresultatet för "Trådlös inställning"
+WA0602,Sidan "WLAN Report" skrivs ut av enheten. Hitta <Connection> på sidan och kontrollera beskrivningen för att bekräfta resultatet av anslutningen.
+WA0603,* Denna utskrift kan ta upp till 2 minuter.
+WA0604,Välj resultatet från listan med alternativ nedan och klicka på "Nästa".
+WA0605,"Connection : OK"
+WA0606,"Connection : Failed"
+WA4001,Avsluta installationen
+WA4002,Installationen är inte klar.
+WA4003,Om du avslutar detta installationsprogram konfigureras inte den trådlösa enheten.
+WA4004,Klicka på "Återuppta" för att fortsätta detta installationsprogram.
+WA4005,Klicka på "Avsluta" för att avsluta detta installationsprogram.
+WA5001,Hittade inte enheten
+WA5002,Vill du försöka igen med samma installationsprocess eller prova något annat?
+WA5003,Försök igen
+WA5004,Om du vill prova samma installationsprocess igen, rekommenderar vi att du tillfälligt försöker inaktivera alla säkerhetsprogram, exempelvis en brandvägg, som kan blockera den.
+WA5005,Prova något annat
+WA5101,Det gick inte att ansluta
+WA5102,Installationsprogrammet ger dig några alternativ för att prova en annan anslutningsmetod. Klicka på "Nästa" för att gå vidare.
+WA9901,< Tillbaka
+WA9902,Avbryt
+WA9903,Nästa >
+WA9904,Avsluta
+WA9905,Återuppta

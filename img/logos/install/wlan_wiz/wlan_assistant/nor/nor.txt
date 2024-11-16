@@ -1,0 +1,42 @@
+WA0001,Veiviser for oppsett av trådløs enhet
+WA0002,1.02
+WA0101,Vent litt...
+WA0201,Installeringsbekreftelse
+WA0202,Trådløsinnstillingene på datamaskinen eller det trådløse tilgangspunktet blir automatisk oppdaget under installeringen. Før den trådløse enheten kobles til et bedriftsnettverk, må du bekrefte med en nettverksadministrator.
+WA0203,Vær oppmerksom på at veiviseren midlertidig vil koble deg fra det trådløse nettverket, slik at den kan koble til enheten din.  I løpet av denne tiden vil du være frakoblet alle nettverkstjenester, inkludert Internett.
+WA0204,Kontrollert og bekreftet
+WA0301,Oppdager nåværende innstillinger for trådløst nettverk på datamaskinen
+WA0302,Innstillingene for trådløst nettverk på datamaskinen eller det trådløse tilgangspunktet ble oppdaget.
+WA0303,Navn på det trådløse nettverket (navn på trådløst nettverk/ruter):
+WA0304,SSID:
+WA0305,Vil du at enheten skal koble til dette trådløse nettverket?
+WA0306,Ja, jeg vil at enheten skal koble til dette trådløse nettverket.
+WA0307,Nei, jeg vil at enheten skal koble til et annet trådløst nettverk.
+WA0401,Aktiver trådløs
+WA0402,Du skal nå aktivere trådløse nettverksfunksjoner på enheten ved hjelp av kontrollpanelet. Et annet vindu skal åpne med informasjon om hvordan du gjør dette.
+WA0403,Når du aktiverer trådløse nettverksfunksjoner på enheten, vil denne veiviseren automatisk fortsette installasjonen.
+WA0404,(*) Hvis skjermbildet "Angi nettverksplassering" vises, klikk "Avbryt".
+WA0501,Sender innstillinger.......Vent litt...
+WA0601,Kontroller tilkoblingsresultatet for "Trådløst oppsett"
+WA0602,Enheten vil skrive ut siden "WLAN Report". Finn <Connection> på siden og sjekk beskrivelsen for å bekrefte resultatet av tilkoblingen.
+WA0603,* Denne utskriften kan ta opptil 2 minutter.
+WA0604,Velg resultatet i listen over valg nedenfor, og klikk "Neste".
+WA0605,"Connection : OK"
+WA0606,"Connection : Failed"
+WA4001,Avslutt oppsettet
+WA4002,Oppsettet ble ikke fullført.
+WA4003,Den trådløse enheten vil ikke bli konfigurert hvis du avslutter dette oppsettsprogrammet.
+WA4004,Hvis du vil fortsette dette oppsettsprogrammet, klikker du på Gjenoppta.
+WA4005,Hvis du vil avslutte dette oppsettsprogrammet, klikker du på Avslutt.
+WA5001,Kunne ikke finne enheten
+WA5002,Vil du prøve på nytt med samme oppsettsprosess, eller prøve noe annet?
+WA5003,Prøv igjen
+WA5004,Hvis du vil prøve samme oppsettsprosess igjen, anbefaler vi at du prøver å deaktivere eventuell sikkerhetsprogramvare midlertidig, så som en brannmur, som kanskje blokkerer den.
+WA5005,Prøv noe annet
+WA5101,Kan ikke koble til
+WA5102,Installasjonsprogrammet vil gi deg noen alternativer for å prøve en annen tilkoblingsmetode.  Klikk "Neste" for å fortsette.
+WA9901,< Tilbake
+WA9902,Avbryt
+WA9903,Neste >
+WA9904,Avslutt
+WA9905,Gjenoppta

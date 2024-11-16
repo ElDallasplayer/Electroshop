@@ -1,0 +1,160 @@
+WS01000010,Installationsguide för trådlösa enheter
+WS01000040,2.02
+WS02010010,Välkommen
+WS02010020,Välkommen till installationsguiden för trådlösa enheter
+WS04000010,Konfiguration av IP-adress
+WS04000020,Konfigurera den trådlösa enhetens IP-adress
+WS04000030,Få en IP-adress automatiskt.
+WS04000050,Ställ in statisk IP-adress
+WS04000060,IP-adress
+WS04000070,Subnätmask
+WS04000080,Gateway
+WS05020010,Namn på trådlöst nätverk
+WS05020020,Konfigurera namnet på det trådlösa nätverk som enheten ska kopplas till.
+WS05020030,Namn (SSID)
+WS05020040,Detta är ett Ad-hoc-nätverk, och det finns ingen åtkomstpunkt.
+WS05020060,Kanal
+WS05030010,Söker efter trådlösa nätverk...
+WS05040010,Tillgängliga trådlösa nätverk
+WS05040020,Välj det SSID som du kontrollerade tidigare.
+WS05040040,Namn (SSID)
+WS05040050,Kanal
+WS05040060,Trådlöst läge
+WS05040070,Signal
+WS05040080,Åtkomstpunkt / basstation
+WS05040090,Ad-hoc-nätverk
+WS05040100,Om SSID (identifiering av din trådlösa åtkomstpunkt) inte visas i listan, eller om det är dolt, kan du fortfarande konfigurera det om du klickar på ”Avancerat”.
+WS05040110,802.11b/g (11 Mbps/54 Mbps)
+WS05040120,802.11b (11 Mbps)
+WS05040130,802.11g (54 Mbps)
+WS05040140,802.11b/g/n
+WS05040150,802.11n
+WS05060010,VIKTIGT!
+WS05060020,Det här trådlösa nätverket är inte säkert. Det använder ingen säker verifiering och kryptering.
+WS05060030,Vill du fortsätta med installationen?
+WS05060040,Namn (SSID):
+WS06000010,Verifieringsmetod och Krypteringsmetod
+WS06000020,Konfigurera verifieringsmetod och krypteringsmetod
+WS06000030,Verifieringsmetod
+WS06000040,Krypteringsmetod
+WS06000050,Nätverksnyckel
+WS06000070,Namn (SSID):
+WS06000080,Intern autentiseringsmetod
+WS07000010,Bekräftelse på inställningar för trådlöst nätverk
+WS07000020,Klicka på ”Nästa” för att skicka följande inställningar till enheten
+WS07000060,Kommunikationsläge
+WS07000070,Infrastruktur
+WS07000080,Ad-hoc
+WS07000090,Namn (SSID)
+WS07000150,Auto
+WS07000190,IP-adress
+WS07000200,Subnätmask
+WS07000210,Gateway
+WS07000220,Kanal
+WS07000230,Verifieringsmetod
+WS07000240,Krypteringsmetod
+WS07000270,Ändra IP-adress
+WS07000280,Intern autentiseringsmetod
+WS08010010,Skickar inställningar ...... Vänta...
+WS21000010,Autentisera användare
+WS21000020,Konfigurera verifieringsmetod och krypteringsmetod
+WS21000030,Namn (SSID):
+WS21000040,Autentisera användare
+WS21000050,Användar-ID
+WS21000060,Användarlösenord
+WS43000000,Konfigurera nätverksnyckel
+WS43000010,Ange den nätverkssäkerhetsnyckel som du kontrollerade tidigare.
+WS43000020,Det trådlösa nätverkets verifieringsmetod och krypteringstyp avkänns automatiskt. Du behöver bara ange nätverksnyckeln.
+WS44000010,Konfigurera certifikat
+WS44000020,Konfigurera klientcertifikat och verifiera servercertifikat.
+WS44000030,Namn (SSID):
+WS44000040,Klientcertifikat
+WS44000050,Verifiering av servercertifikat
+WS44000051,Ingen verifiering
+WS44000052,CA Cert.
+WS44000053,CA Cert. + Server ID
+WS44000060,Server-ID
+WS46000010,Kan inte ansluta till nätverket
+WS46000020,Bekräfta följande och klicka sedan på Försök igen.
+WS46000230,Din trådlösa åtkomstpunkt/router går inte att identifiera.(TS-02)
+WS46000240,Prova följande:
+WS46000250,- Kontrollera att du väljer korrekt SSID (nätverksnamn) och anger korrekt nätverksnyckel
+WS46000260,- Kontrollera att din trådlösa åtkomstpunkt/router inte använder några ytterligare säkerhetsinställningar, exempelvis MAC-adressfiltrering
+WS46000270,- Försök flytta enheten närmare din trådlösa åtkomstpunkt/router. När den har anslutits till nätverket bör du kunna flytta tillbaka den till dess föregående placering
+WS46000280,MAC-adress:
+WS46000330,Enheten kan inte ansluta till din trådlösa åtkomstpunkt/router.(TS-03)
+WS46000340,- Kontrollera att du väljer korrekt SSID (nätverksnamn) och anger korrekt nätverksnyckel
+WS46000350,- Om du inte känner till den här informationen, hänvisa till dokumentationen från tillverkaren eller leverantören av din trådlösa åtkomstpunkt/router
+WS46000430,Autentiserings/krypteringsmetod som inte stöds har identifierats på din trådlösa åtkomstpunkt/router.(TS-04)
+WS46000440,- Din trådlösa åtkomstpunkt/router använder en autentiserings/krypteringsmethod som inte stöds av enheten. Kontrollera att du väljer korrekt SSID (nätverksnamn)
+WS46000530,SSID och nätverksnyckel som anges är fel.(TS-05)
+WS46000540,-  Kontrollera att du väljer korrekt SSID (nätverksnamn) och anger korrekt nätverksnyckel
+WS46000630,Den angivna trådlösa säkerhetsinformationen är fel.(TS-06)
+WS46000640,- Kontrollera den autentiserings/krypteringsmetod som du väljer och se till att du anger korrekt nätverksnyckel
+WS50000010,Bekräfta installationen
+WS50000020,Under installationen kommer datorns eller den trådlösa åtkomstpunktens trådlösa inställningar att identifieras. Kontakta nätverksadministratören innan en trådlös enhet ansluts till ett företagsnätverk.
+WS50000030,Kontrollerat och bekräftat
+WS51000010,Identifierar trådlösa nätverksinställningar på datorn
+WS51000020,Datorns eller den trådlösa åtkomstpunktens trådlösa nätverksinställningar har identifierats.
+WS51000030,Det trådlösa nätverkets namn har identifierats (namn på trådlös åtkomstpunkt/router):
+WS51000040,SSID:
+WS51000050,Vill du ansluta till det trådlösa nätverket med dessa inställningar?
+WS51000060,Ja
+WS51000070,Nej
+WS98050010,Ogiltig nätverksnyckel
+WS98050020,(ASCII WEP-nyckel)
+WS98050030,Du angav inte WEP-nyckelinformationen korrekt.
+WS98050040,64 (40) bitar WEP: ”Hello”
+WS98050050,128 (104) bitar WEP: ”Wirelesscomms”
+WS98050060,Ange 5 eller 13 texttecken. Till exempel:
+WS98060010,Ogiltig nätverksnyckel
+WS98060020,(Hex. WEP-nyckel)
+WS98060030,Du angav inte WEP-nyckelinformationen korrekt.
+WS98060040,Ange 10 eller 26 hexadecimala tecken. Till exempel:
+WS98060050,64 (40) bitar WEP: ”71f2234aba”
+WS98060060,128 (104) bitar WEP: ”71f2234ab56cd709e5412aa3ba”
+WS98070010,Avsluta installationen
+WS98070020,Installationen har inte slutförts.
+WS98070030,Om du avslutar installationsprogrammet blir inte den trådlösa enheten konfigurerad.
+WS98070040,Fortsätt med installationsprogrammet genom att klicka på ”Fortsätt”.
+WS98070050,Avsluta installationsprogrammet genom att klicka på ”Avsluta”.
+WS98100010,Ogiltig nätverksnyckel
+WS98100020,Lösenordsfrasen är en ASCII sträng med 8-63 tecken.
+WS98150010,Ogiltig nätverksnyckel
+WS98150020,Du har inte angett rätt nätverksnyckel. Skriv 5 eller 8-63 tecken beroende på säkerhetsmetoden.
+WS98150030,Mer information finns i hjälptexten.
+WS98160010,USB-anslutningsfel
+WS98160020,Kontrollera att en USB-kabel är ansluten till enheten.
+WS98160030,Kontrollera att enheten är påslagen.
+WS99010010,OK
+WS99010020,Avbryt
+WS99010030,Avsluta
+WS99010040,< Tillbaka
+WS99010050,Nästa >
+WS99010060,Hjälp
+WS99010070,Uppdatera
+WS99010090,Fortsätt
+WS99010100,Avancerat
+WS99010130,Var finns mitt SSID?
+WS99010140,Var finns min nätverksnyckel?
+WS99010150,Försök igen >
+WS99020100,Öppet system
+WS99020110,Delad nyckel
+WS99020120,WPA / WPA2-PSK
+WS99020160,LEAP
+WS99020170,EAP-FAST
+WS99020180,PEAP
+WS99020190,EAP-TTLS
+WS99020200,Ingen
+WS99020210,WEP
+WS99020220,TKIP
+WS99020230,AES
+WS99020240,CKIP
+WS99020250,TKIP+AES
+WS99020500,EAP-TLS
+WS99030100,INGEN
+WS99030110,GTC
+WS99030120,MS-CHAPv2
+WS99030130,CHAP
+WS99030140,MS-CHAP
+WS99030150,PAP

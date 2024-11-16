@@ -1,0 +1,344 @@
+.container-producto-reducido{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.imagen-producto-compra{
+    width: 100%;
+    max-height: 120px;
+    border-radius: 0.2rem;
+}
+
+.contenedor-cuerpo{
+    position: relative;
+}
+
+.contenedor_ofertas_precio{
+    position: relative;
+}
+
+.contenedor_oferta_producto_reducido{
+    position: absolute;
+    left: 20%;
+    top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: var(--rojo-electronorte);
+    color: white;
+    border-radius: 0.2rem;
+}
+
+.contenedor_valor_anterior_producto_reducido{
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    color: var(--bs-gray-500);
+    text-decoration:line-through;
+}
+
+.contenedor_cantidad_comprar{
+    position: absolute;
+    top: 45%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    margin: auto;
+}
+
+.input_cantidad_comprar_reducido{
+    max-width: 40px;
+}
+
+.contenedor_percio_total{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.precio_total_calculado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.precio_total_calculado_texto{
+    padding: 0;
+    margin: 0 !important;
+    font-size: 20px;
+}
+
+.boton_eliminar_producto_carrito{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.principal_container_resultado{
+    bottom: 0;
+    margin-top: 1rem !important;
+    border-top: 1px solid var(--bs-gray-500);
+}
+
+.box_container{
+    height: 150px;
+}
+
+.valor_total_productos{
+    position: absolute;
+    right: 20px;
+    font-size: 30px;
+}
+
+.elemento_flotante_totales{
+    position: absolute;
+}
+
+.contenedor_opciones_compra-fixed{
+    position: fixed;
+    top: 60px;
+    right: 0;
+}
+
+.box-compra-container{
+    height: 350px;
+    background-color: var(--bs-gray-200);
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.box-compra-container{
+    position: relative;
+}
+
+.boton_contenedor_compra{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.boton_acceder_a_compra{
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30%;
+    padding-right: 30%;
+    margin-bottom: 10px;
+    background-color: var(--rojo-electronorte);
+    color: white;
+    font-weight: bold;
+    border-radius: 0.3rem;
+    cursor:pointer;
+    transition: 0.2s;
+}
+
+.boton_acceder_a_compra:hover{
+    transform: scale(1.05);
+}
+
+.titulo_contenedor_compra{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.titulo_contenedor_compra_total{
+    height: 30px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.valor_padre_subtotal{
+    position: relative;
+}
+
+.subtotal_compra_producto{
+    position: absolute;
+    right: 0;
+}
+
+.subtotal_garantia_extendida{
+    position: absolute;
+    right: 0;
+}
+
+.contenedor-total-compra-realizar{
+    position: relative;
+}
+
+.total_compra_a_realizar{
+    position: absolute;
+    right: 0;
+}
+
+.subtotal_envio{
+    position: absolute;
+    right: 0;
+}
+
+.boton_contenedor_agregar_garantia_extendida{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.boton_agregar_garantia_extendida{
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10%;
+    padding-right: 10%; 
+    border-radius: 1rem;
+    color: white;
+    background-color: var(--negro-electronorte);
+    cursor:pointer;
+    transition: 0.2s;
+}
+.boton_agregar_garantia_extendida:hover{
+    transform: scale(1.01);
+}
+
+.boton_contenedor_agregar_envio{
+    position: relative;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.boton_agregar_garantia_envio{
+    width: 20%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 1rem;
+    background-color: var(--bs-gray-600);
+    color: white;
+    cursor:pointer;
+    transition: 0.2s;
+}
+
+.contenedor_input_garantia_extendia{
+    margin-left: 2rem;
+}
+
+.input_garantia_extendida_meses{
+    width: 40px;
+}
+
+.boton_agregar_convenir_envio{
+    margin-left: 10px;
+    width: 30%;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-radius: 1rem;
+    background-color: var(--bs-gray-600);
+    color: white;
+    cursor:pointer;
+    transition: 0.2s;
+}
+
+#contenedor_envio{
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+    z-index: 99999;
+}
+
+#contenedor_coordinar_envio{
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+    z-index: 999;
+}
+
+.contenedor-blur-t{
+    position: absolute;
+    width: 100%;
+    height: 100% !important;
+    background-color: black;
+    z-index: 999;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.contenedor-opciones-envio{
+    position: absolute;
+    width: 30%;
+    height: 75%;
+    background-color: var(--bs-gray-100);
+    left: 0;
+    right: 0;
+    top: -20%;
+    bottom: 0;
+    margin: auto;
+    border-radius: 0.5rem;
+    z-index: 999999;
+}
+
+.contenedor-opciones-coordinar-envio{
+    position: absolute;
+    width: 30%;
+    height: 75%;
+    background-color: var(--bs-gray-100);
+    left: 0;
+    right: 0;
+    top: 10%;
+    margin: auto;
+    border-radius: 0.5rem;
+    z-index: 999999;
+}
+
+.contenedor-opciones-precompra{
+    position: absolute;
+    width: 30%;
+    height: auto;
+    background-color: var(--bs-gray-100);
+    left: 0;
+    right: 0;
+    top: 22%;
+    bottom: 0;
+    margin: auto;
+    border-radius: 0.5rem;
+    z-index: 999999;
+}
+
+#contenedor_mapa_rivadavia{
+    width: 100% !important;
+    height: 100%;
+}
+
+.map-container-rivadavia{
+    height: 100%;
+}
+
+.titulo-envio-tarjeta{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.contenedor-opcion-envio{
+    margin-bottom: 1rem;
+}
+
+.contenedor-opciones-coordinar-envio{
+    margin-bottom: 1rem;
+}

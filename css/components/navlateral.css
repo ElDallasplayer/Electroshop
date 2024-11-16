@@ -1,0 +1,29 @@
+#contenedor-lateral-principal{
+    border-right: 1px solid var(--bs-gray-200);
+}
+
+.boton_busqueda_lateral{
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    top: 5px;
+    right: 10px;
+}
+
+.opcion_categoria_padre{
+    display: flex;
+    justify-content: start;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.opcion_categoria_hijo{
+    margin-top: 0 !important;
+    margin-left: 20px;
+}
+
+.form-checkbox{
+    cursor:pointer;
+}

@@ -1,0 +1,21 @@
+.contenedor_imagen_marca{
+    cursor:pointer;
+    width: 150px;
+    height: 150px;
+    border-radius: 15rem;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.contenedor_imagen_marca:hover{
+    transform: scale(1.05);
+}
+
+.imagen_marca_rounded_max{
+    border-radius: 5rem !important;
+}
+
+
+.imagen_marca_rounded_min{
+    border-radius: 1rem !important;
+}

@@ -1,0 +1,42 @@
+WA0001,Ohjattu langattoman laitteen asennus
+WA0002,1.02
+WA0101,Odota...
+WA0201,Asennuksen vahvistus
+WA0202,Asennuksen aikana tietokoneen tai langattoman tukiaseman langattoman verkon asetukset tunnistetaan automaattisesti. Pyyd‰ verkon valvojalta lupa, ennen kuin yhdist‰t langattoman laitteen yrityksen verkkoon.
+WA0203,Huomaa, ett‰ ohjattu toiminto katkaisee yhteyden langattomaan verkkoon tilap‰isesti, jotta se voi muodostaa yhteyden laitteeseen.  T‰n‰ aikana yhteys kaikkiin verkkopalveluihin, mukaan lukien Internetiin, on poikki.
+WA0204,Tarkistettu ja vahvistettu
+WA0301,Olemassa olevat langattoman verkon asetukset tunnistetaan tietokoneelta
+WA0302,Tietokoneen tai langattoman tukiaseman langattoman verkon asetukset on tunnistettu.
+WA0303,Tunnistetun langattoman verkon nimi (langattoman tukiaseman/reitittimen nimi):
+WA0304,SSID:
+WA0305,Haluatko yhdist‰‰ laitteen t‰h‰n langattomaan verkkoon?
+WA0306,Kyll‰, haluan yhdist‰‰ laitteen t‰h‰n langattomaan verkkoon.
+WA0307,Ei, haluan yhdist‰‰ laitteen toiseen langattomaan verkkoon.
+WA0401,Ota langaton verkko k‰yttˆˆn
+WA0402,Seuraavaksi sinun tulee ottaa langaton verkko k‰yttˆˆn laitteessa sen ohjauspaneelista. Toisen ikkunan tulisi avautua, sis‰lt‰en tarkemmat tiedot siit‰, miten t‰m‰n tehd‰‰n.
+WA0403,Kun otat langattoman verkon k‰yttˆˆn laitteessa, t‰m‰ ohjattu toiminto jatkaa asennusta automaattisesti.
+WA0404,(*) Jos "M‰‰rit‰ verkkosijainti" -n‰yttˆ avautuu, napsauta "Peruuta".
+WA0501,Asetuksia l‰hetet‰‰n... Odota...
+WA0601,Tarkista yhteystulokset "Langattoman verkon m‰‰ritys"-kohdasta
+WA0602,Laite tulostaa "WLAN Report"-sivun. Etsi <Connection> sivulta ja tarkista kuvaus, jotta voit vahvistaa yhteyden tulokset.
+WA0603,* T‰m‰ tulostus saattaa kest‰‰ jopa 2 minuuttia.
+WA0604,Valitse tulos alla olevasta valintaluettelosta ja napsauta "Seuraava".
+WA0605,"Connection : OK"
+WA0606,"Connection : Failed"
+WA4001,Lopeta asennus
+WA4002,Asennus ei ole valmis.
+WA4003,Jos lopetat t‰m‰n asennusohjelman, langatonta laitetta ei ole m‰‰ritetty.
+WA4004,Voit jatkaa t‰t‰ asennusohjelmaa napsauttamalla "Jatka".
+WA4005,Voit lopettaa t‰m‰n asennusohjelman napsauttamalla "Poistu".
+WA5001,Laitetta ei lˆytynyt
+WA5002,Haluatko yritt‰‰ uudelleen k‰ytt‰en samaa asennusprosessia vai yritt‰‰ jotain muuta?
+WA5003,Yrit‰ uudelleen
+WA5004,Jos haluat yritt‰‰ samaa asennusprosessia uudelleen, suosittelemme ett‰ kokeilet poistaa suojausohjelman - kuten palomuurin k‰ytˆst‰ tilap‰isesti, joka saattaa est‰‰ yhteyden.
+WA5005,Kokeile jotain muuta
+WA5101,Yhteytt‰ ei saatu
+WA5102,Asennusohjelma esitt‰‰ vaihtoehtoja, joilla voit kokeilla toista yhteydenmuodostusmenetelm‰‰.  Jatka napsauttamalla "Seuraava".
+WA9901,< Edellinen
+WA9902,Peruuta
+WA9903,Seuraava >
+WA9904,Poistu
+WA9905,Jatka

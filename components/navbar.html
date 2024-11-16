@@ -1,0 +1,149 @@
+<div class="component">
+    <link href="../css/components/navbar.css" rel="stylesheet"/>
+  
+    <div class="row w-100 p-0 m-0 principal-navbar shadow">
+        <div class="col-12 p-0 m-0 w-100 d-none" id="usuario_form_container"></div>
+        <div class="row w-100 p-0 m-0 border" style="height: 100px;">
+            <div class="col-3 m-0 p-0">
+                <div class="row m-0 mt-3 p-0 justify-content-center">
+                    <div class="col-10 d-flex justify-content-center align-items-center">
+                        <img src="../img/logos/logo electronorte png.png" class="imagen-logo"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7 p-0 m-0 d-flex align-items-center"> 
+                <input type="text" id="buscador-principal-productos-navbar" class="form-control form-rounded" placeholder="Buscar productos" />
+                <div class="search-button" id="boton-busqueda-vista-principal">
+                    <svg viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.198 19.482c2.108 0 4.08-.587 5.847-1.76l.272-.195 5.643 5.408 2.108-2.02-5.711-5.343.204-.26a9.612 9.612 0 001.768-5.539C20.329 4.365 15.773 0 10.13 0S0 4.365 0 9.773c0 5.343 4.555 9.709 10.198 9.709zm0-17.332c4.352 0 7.887 3.388 7.887 7.558s-3.535 7.623-7.887 7.623c-4.351 0-7.954-3.388-7.954-7.558S5.847 2.15 10.198 2.15z" fill="#000"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="col-1 d-flex justify-content-center align-items-center">
+                <i class="mdi mdi-cart-outline icono-carrito" id="iconoCarrito"></i>
+                <div class="contenedor-articulos-carrito">
+                </div>
+            </div>
+            <div class="col-1 contenedor-login-user d-flex justify-content-start align-items-center">
+                <i class="mdi mdi-account-circle-outline icono-usuarios"></i>
+                <p class="nombre_usuario_logueado"></p>
+            </div>
+        </div>
+        <div class="row p-0 m-0 w-100 justify-content-center contenedor-opciones" style="height: auto;">
+            <div id="categorias-button" class="col p-0 m-0 navbar-subtitulo d-flex align-items-center justify-content-center">
+                CATEGORIAS
+            </div>    
+            <div class="col p-0 m-0 navbar-subtitulo d-flex align-items-center justify-content-center" onclick="RedireccionarVista('categorias.html?valorcategoria=0')">
+                PRODUCTOS OUTLET
+            </div>
+            <div class="col p-0 m-0 navbar-subtitulo d-flex align-items-center justify-content-center">
+                VENTAS MAYORISTAS
+            </div>
+            <div class="col p-0 m-0 navbar-subtitulo d-flex align-items-center justify-content-center" onclick="RedireccionarVista('categorias.html?valorcategoria=3')">
+                ESPECIALES DE PRIMERA
+            </div>
+            <div class="col p-0 m-0 navbar-subtitulo d-flex align-items-center justify-content-center">
+                LAS MEJORES CUOTAS
+            </div>
+        </div>
+    </div>
+
+    <!--TABS-->
+    <div class="row p-0 m-0 w-100 panel-contenedor-categorias-ocultas">
+        <div class="col-4 p-0 m-0 border CONTENEDOR-INICIAL">
+            <div class="row p-0 m-0 w-100 CONTENEDOR-INICIAL-OPCIONES">
+                
+            </div>
+        </div>
+        <div class="col-4 p-0 m-0 border CONTENEDOR-CENTRAL">
+            <div class="row p-0 m-0 w-100 CONTENEDOR-CENTRAL-OPCIONES">
+                
+            </div>
+        </div>
+        <div class="col-4 p-0 m-0 border CONTENEDOR-FINAL">
+            <div class="row p-0 m-0 w-100 CONTENEDOR-FINAL-OPCIONES">
+                
+            </div>
+        </div>
+    </div>
+    <div class="row p-0 m-0 w-100 panel-contenedor-categorias">
+        <div class="col-4 p-0 m-0 border">
+            <div class="row p-0 m-0 w-100">
+                <div class="col-12 m-0 w-100 submenu-option text-center" onclick="RedireccionarVista('categorias.html')">
+                    TODOS
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center" id="ventiladores">
+                    VENTILADORES
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    CALEFACCION
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    CELULARES
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    TELEVISORES
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    HERRAMIENTAS
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    JARDIN
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    PEQUEÑOS ELECTRODOMESTICOS
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    BLANQUERIA Y BEBE
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    JUGUETES
+                </div>
+            </div>
+        </div>
+        <div class="col-4 p-0 m-0 border">
+            <div class="row p-0 m-0 w-100">
+                    <div class="col-12 m-0 w-100 submenu-option text-center">
+                        HOGAR
+                    </div>
+                    <div class="col-12 m-0 w-100 submenu-option text-center">
+                        PREMIUM
+                    </div>
+                    <div class="col-12 m-0 w-100 submenu-option text-center">
+                        LILIANA PREMIUM
+                    </div>
+            </div>
+        </div>
+        <div class="col-4 p-0 m-0 border">
+            <div class="row p-0 m-0 w-100">
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    LILIANA OUTLET
+                </div>
+                <div class="col-12 m-0 w-100 submenu-option text-center">
+                    PEABODY OUTLET
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="container_producto_popup_blur" class="d-none"></div>
+    <div id="container_producto_popup" class="d-none"></div>
+
+    <script src="../js/components/navbar.js" type="module"></script>
+
+    <script>
+        let valoruser = ObtenerGuidUser();
+
+        $(".sub_categorias ").slideDown()
+        $.get( DireccionPeticiones() + "/Home/UsuarioEstaLogueado?guid=" + valoruser, (data) =>{
+            if(data.isLogin){
+                $(".nombre_usuario_logueado").html(data.user.nombreCompleto)
+                let cantidadArticulos = data.logInUser.articulosEnCarrito.split(',').length;
+                if(cantidadArticulos > 0){
+                    ActualizarProductosCarrito(cantidadArticulos - 1)
+                }
+            }
+        })
+    </script>
+</div>
+  

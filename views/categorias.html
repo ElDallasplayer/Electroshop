@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorias</title>
+
+    <!--CDNS-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      var addthis_config = { data_track_addressbar: true };
+    </script>
+    <script
+      type="text/javascript"
+      src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4ff17589278d8b3a"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!--REFERENCIAS LOCALES-->
+    <script src="../js/controllers/loadcomponents.js"></script>
+    <link href="../css/site.css" rel="stylesheet" />
+    
+    <link href="../css/categorias.css" rel="stylesheet" />
+    <link href="../css/components/card.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="vista-response" class="w-100"></div>
+    <div id="chat-response" class="w-100" style="z-index: 95000;"></div>
+
+    <div class="row p-0 m-0 w-100" id="conenedor-marcas-categoria">
+      <div class="row p-0 m-0 w-100" id="conenedor-marcas-categoria">
+        <div class="swiffy-slider slider-nav-autoplay" data-slider-nav-autoplay-interval="10000">
+          <ul class="slider-container">
+              <li>
+                  <div id="slide1">
+                      <div class="row p-0 m-0 w-100 p-5 justify-content-center">
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=peabody')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUyIiBoZWlnaHQ9IjIzIiB2aWV3Qm94PSIwIDAgMTUyIDIzIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8ZyBjbGlwLXBhdGg9InVybCgjY2xpcDBfMzEwXzY2NSkiPgo8cGF0aCBkPSJNMTE5Ljg0NSA1LjAxNjUzQzEyMC40NiA1LjA2MDg3IDEyMS4wNiA1LjIzMTc3IDEyMS42MDggNS41MTg3OUMxMjIuMTU2IDUuODA1ODEgMTIyLjY0IDYuMjAyOTMgMTIzLjAzMSA2LjY4NTkzQzEyMy40MjMgNy4xNjg5MyAxMjMuNzEzIDcuNzI3NjcgMTIzLjg4NCA4LjMyODA1QzEyNC4wNTUgOC45Mjg0NCAxMjQuMTA0IDkuNTU3ODcgMTI0LjAyNyAxMC4xNzc5QzEyNC4wNzkgMTEuMjQxNSAxMjMuOTEyIDEyLjMwNDMgMTIzLjUzNiAxMy4yOTg4QzEyMy4xNjEgMTQuMjkzNCAxMjIuNTg2IDE1LjE5OCAxMjEuODQ3IDE1Ljk1NTFDMTIwLjExOSAxNy40NDgxIDExNy44OTUgMTguMjE4NiAxMTUuNjI3IDE4LjExMDJDMTE0Ljk4MiAxOC4xMjI2IDExNC4zMzcgMTguMDkyNCAxMTMuNjk2IDE4LjAxOTdMMTE1LjQ4NCA3Ljk2ODVMMTE1LjYyNyA3LjI0NDA5QzExMy41ODkgNy4wOTQ3MSAxMTEuNTQyIDcuMzIxNzUgMTA5LjU4NSA3LjkxNDE3TDEwNi45NTggMjIuMjc1NkMxMDkuMjY5IDIyLjY0MTMgMTExLjYwNyAyMi44MDQ5IDExMy45NDYgMjIuNzY0NkMxMTkuNTQxIDIyLjc2NDYgMTIzLjE4NyAyMS43ODY2IDEyNi4wMTEgMTkuNTc3MkMxMjcuNDMxIDE4LjQxODIgMTI4LjU3MiAxNi45NDY1IDEyOS4zNDYgMTUuMjczOEMxMzAuMTIgMTMuNjAxMiAxMzAuNTA4IDExLjc3MTcgMTMwLjQ4IDkuOTI0NEMxMzAuNTkgOC4zNzU1NyAxMzAuMjg0IDYuODI1NDMgMTI5LjU5NSA1LjQzODQ0QzEyOC45MDYgNC4wNTE0NiAxMjcuODU5IDIuODc5MzQgMTI2LjU2NSAyLjA0NjQ1QzEyMy44NDMgMC42MzA3NzkgMTIwLjc4NyAwLjAwNDA4ODE4IDExNy43MzYgMC4yMzU0MjZDMTE1LjQ5NiAwLjIxMTQyNCAxMTMuMjYgMC4zODcxNjggMTExLjA1MSAwLjc2MDYyM0wxMTAuMTc1IDUuMjUxOTZDMTEzLjM3IDQuNzAxNjUgMTE2LjYyNyA0LjYyMjM1IDExOS44NDUgNS4wMTY1M1oiIGZpbGw9IiMxMjgyRTEiLz4KPHBhdGggZD0iTTUyLjI5OTIgMTcuMTMyM0w1Mi42OTI0IDIyLjU2NTRINTguOTg0TDU1LjgwMjQgMC4zOTg0MzhINDguMDI3M0wzNy4wNzA2IDIyLjYwMTZINDMuNDMzN0w0NS44Mjg4IDE3LjE2ODVMNTIuMjk5MiAxNy4xMzIzWk00Ny41NDQ3IDEyLjY3NzJMNDkuMzMyMSA4Ljc4MzQ4QzQ5Ljk1NzcgNy40OTc2NSA1MC41NDc1IDUuODg1ODQgNTEuMTE5NSA0LjYwMDAxQzUxLjI4MDMgNS44ODU4NCA1MS40NTkxIDcuNDk3NjUgNTEuNTg0MiA4Ljc0NzI2TDUxLjk3NzQgMTIuNjc3Mkg0Ny41NDQ3WiIgZmlsbD0iIzEyODJFMSIvPgo8cGF0aCBkPSJNNjguNDAzNiAxMy4xNDhINjkuNzA4NEM3MS45NjA1IDEzLjE0OCA3My45NDQ1IDEzLjQxOTcgNzMuOTQ0NSAxNS41MjA1QzczLjk0NDUgMTcuNjIxMyA3MS43MjgxIDE4LjExMDMgNjkuMzY4OCAxOC4xMTAzQzY4LjYwMDIgMTguMTEwMyA2OC4wNDYxIDE4LjExMDMgNjcuNDkyIDE4LjExMDNMNjguNDAzNiAxMy4xNDhaTTYwLjk4NTkgMjIuNjAxNkM2MS43MTg3IDIyLjYwMTYgNjUuMTUwNSAyMi43ODI3IDY3LjUyNzggMjIuNzI4NEM3MC43MjcgMjIuOTg0OSA3My45MzggMjIuNDExNSA3Ni44NTggMjEuMDYyMkM3Ny44NzM3IDIwLjU0NDMgNzguNzI5NCAxOS43NTM1IDc5LjMzMTUgMTguNzc2MUM3OS45MzM2IDE3Ljc5ODggODAuMjU4OSAxNi42NzI1IDgwLjI3MTkgMTUuNTIwNUM4MC4zMDk3IDE0LjQyMjMgNzkuOTc1OCAxMy4zNDM5IDc5LjMyNTYgMTIuNDY0NEM3OC42NzU0IDExLjU4NDkgNzcuNzQ3OSAxMC45NTcgNzYuNjk3MSAxMC42ODUxQzc5LjA3NDMgOS45NjA2NCA4MS4wMjI2IDguNTExODMgODEuMDIyNiA1LjY2ODUyQzgwLjk4NDIgNC42MTkxMiA4MC42MTcgMy42MDkzNiA3OS45NzQzIDIuNzg1NTZDNzkuMzMxNiAxLjk2MTc2IDc4LjQ0NjcgMS4zNjY3MSA3Ny40NDc4IDEuMDg2NjNDNzUuNjI2MiAwLjQ1NTExMSA3My43MDU5IDAuMTY2NjM0IDcxLjc4MTggMC4yMzU0NDdDNjkuNTE2OCAwLjIxNjcyNiA2Ny4yNTUgMC40MTA3MzIgNjUuMDI1NCAwLjgxNDk3NUw2MC45ODU5IDIyLjYwMTZaTTcwLjA2NTkgNC45ODAzM0M3MC42OTE3IDQuODczMTcgNzEuMzI1OSA0LjgyNDY3IDcxLjk2MDUgNC44MzU0NUM3My41NTEzIDQuODM1NDUgNzQuOTQ1NSA1LjE5NzY1IDc0Ljk0NTUgNi42NDY0N0M3NC45NDU1IDguMDk1MjkgNzMuMzU0NyA4LjgxOTcgNzAuOTc3NCA4LjgxOTdINjkuMzE1Mkw3MC4wNjU5IDQuOTgwMzNaIiBmaWxsPSIjMTI4MkUxIi8+CjxwYXRoIGQ9Ik0wIDIyLjYwMTZINS42NjYwNEw3LjE0OTU4IDE1LjAzMTVDNy44MzcyOCAxNS4xMjM4IDguNTI5NDMgMTUuMTc4MiA5LjIyMjk1IDE1LjE5NDVDMTEuOTQxNCAxNS4zMjgyIDE0LjYzMTkgMTQuNTg2NSAxNi45MDg3IDEzLjA3NTZDMTcuODk2MyAxMi4zNzU2IDE4LjY5NzMgMTEuNDM4NiAxOS4yNCAxMC4zNDgzQzE5Ljc4MjggOS4yNTc5MyAyMC4wNTAzIDguMDQ4MyAyMC4wMTg4IDYuODI3NTZDMjAuMDg2IDUuNzA3ODUgMTkuODIyNyA0LjU5MzIzIDE5LjI2MjQgMy42MjU2N0MxOC43MDIyIDIuNjU4MTEgMTcuODcwNCAxLjg4MTQgMTYuODczIDEuMzk0NDlDMTQuODk4OCAwLjUyMDMgMTIuNzUwOSAwLjEyMzQ4OCAxMC41OTkyIDAuMjM1NDM2QzguMzk0NjYgMC4xODIyMTIgNi4xOTE4NyAwLjQwMTE0NiA0LjAzOTUxIDAuODg3NDA0TDAgMjIuNjAxNlpNOC45MzY5NyA0Ljk4MDMyQzkuNTg2OTMgNC44NzQwNiAxMC4yNDQ4IDQuODI1NTkgMTAuOTAzMSA0LjgzNTQ0QzEyLjQ5MzkgNC44MzU0NCAxNC4xMjA0IDUuMjcwMDggMTQuMTIwNCA3LjM4ODk4QzE0LjEyMDQgOS41MDc4OCAxMi4zMzMgMTAuNDg1OCA5LjkzNzkxIDEwLjQ4NThDOS4yNTk0OSAxMC40OTQ2IDguNTgyMTcgMTAuNDI3OCA3LjkxODE2IDEwLjI4NjZMOC45MzY5NyA0Ljk4MDMyWiIgZmlsbD0iIzEyODJFMSIvPgo8cGF0aCBkPSJNMzUuNTUxMyAxMy43ODE5SDI2Ljc5M0wyNi4wNzgxIDE3LjY1NzVIMzUuODczTDM0Ljk2MTQgMjIuNjAxNkgxOS4zMzk2TDIzLjQ4NjQgMC4zOTg0MzhIMzguNjA3N0wzNy42NjA0IDUuMzQyNTNIMjguMzY1OUwyNy43MDQ2IDguODM3ODFIMzYuNDgwN0wzNS41NTEzIDEzLjc4MTlaIiBmaWxsPSIjMTI4MkUxIi8+CjxwYXRoIGQ9Ik05Mi45NDQ1IDIzQzk2LjQxMTcgMjMuMDY3MyA5OS43NjkzIDIxLjc2ODggMTAyLjMxIDE5LjM3OEMxMDMuNTEgMTguMTY4IDEwNC40NTUgMTYuNzI0IDEwNS4wODggMTUuMTMzM0MxMDUuNzIxIDEzLjU0MjYgMTA2LjAyOSAxMS44MzgzIDEwNS45OTIgMTAuMTIzNkMxMDUuOTkyIDMuNjIyMDUgMTAxLjczOCAtMy43OTg2M2UtMDcgOTUuNzUwNyAtMy43OTg2M2UtMDdDOTIuMjk2MiAtMC4wNTU5ODU1IDg4Ljk1MzcgMS4yNDE1OSA4Ni40MjA1IDMuNjIyMDVDODUuMTgwNSA0LjgzODAzIDg0LjIwMjIgNi4zMDA3NiA4My41NDcgNy45MTgzMUM4Mi44OTE4IDkuNTM1ODYgODIuNTczOSAxMS4yNzMyIDgyLjYxMzQgMTMuMDIxM0M4Mi42MTM0IDE5LjM0MTcgODYuOTc0NiAyMy4wMzYyIDkyLjg5MDkgMjMuMDM2Mkw5Mi45NDQ1IDIzWk05My42NzczIDE4LjExMDJDOTAuNTEzNyAxOC4xMTAyIDg4LjgzMzUgMTYuMTU0MyA4OC44MzM1IDEyLjY3NzJDODguODMzNSA5LjIgOTEuMzAwMSA0LjkwNzg3IDk1LjA3MTUgNC45MDc4N0M5OC40ODU0IDQuODE3MzIgOTkuNzM2NiA3LjI0NDA5IDk5LjczNjYgMTAuNDg1OEM5OS43MzY2IDE0LjQ4ODIgOTcuMjcgMTguMTEwMiA5My43MTMxIDE4LjExMDJIOTMuNjc3M1oiIGZpbGw9IiMxMjgyRTEiLz4KPHBhdGggZD0iTTEzNC4yMTUgMjIuNjAxNkwxMzYuMDAzIDEzLjM0NzNMMTMwLjg1NSAwLjM5ODQzOEgxMzcuMDc1TDEzOC40MzQgNS40MzMwOEMxMzguODYzIDYuOTU0MzQgMTM5LjE4NCA3LjkxNDE5IDEzOS41MDYgOS4yOTA1NkMxNDAuMjkzIDguMDA0NzQgMTQwLjk3MiA2Ljg4MTkgMTQxLjg4MyA1LjMwNjMxTDE0NC43NzkgMC4zOTg0MzhIMTUxLjkyOUwxNDEuNzIyIDEzLjA3NTZMMTM5LjkzNSAyMi41NjU0TDEzNC4yMTUgMjIuNjAxNloiIGZpbGw9IiMxMjgyRTEiLz4KPC9nPgo8ZGVmcz4KPGNsaXBQYXRoIGlkPSJjbGlwMF8zMTBfNjY1Ij4KPHJlY3Qgd2lkdGg9IjE1MiIgaGVpZ2h0PSIyMyIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=kanji')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/kanji_png.jpg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=whirlpool')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="../img/logos/whirlpool.png" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=samsung')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/samsung.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=lutin')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="../img/logos/lutin_home.png" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=liliana')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="https://www.laplataclima.com.ar/wp-content/uploads/2021/03/liliana-web.png" width="100%">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div id="slide2">
+                      <div class="row p-0 m-0 w-100 p-5 justify-content-center" >
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=axel')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="https://images.fravega.com/f300/157edc6b2b8cb5e4ee731c3579685b50.png.webp" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=ariston')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/aristone.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=moulinex')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/moulinex.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=daewoo')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/daewoo.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=kenwood')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/kenwood.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=protalia')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="https://protalia.com.ar/wp-content/uploads/2022/05/Logo-Naranja-1024x195.png" width="100%">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div id="slide3">
+                      <div class="row p-0 m-0 w-100 p-5 justify-content-center" >
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=eslabon')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/eslabonlujo.webp" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=westinghouse')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/westinghouse.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=electrolux')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/electrolux.svg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=whitenblack')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="" src="../img/logos/whitenblack.png" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=neba')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/neba.webp" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=inelro')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/inelro.jpeg" width="100%">
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+              <li>
+                  <div id="slide4">
+                      <div class="row p-0 m-0 w-100 p-5 justify-content-center" >
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=glama')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/glama.jpg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=codini')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/codini.jpg" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=ultracomb')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/ultracomb.png" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=gyroor')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/gyroor.png" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=mondial')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/mondial.webp" width="100%">
+                              </div>
+                          </div>
+                          <div class="col-2 p-0 d-flex justify-content-center align-items-center">
+                              <div onclick="RedireccionarVista('categorias.html?valorbusqueda=daihatsu')" class="contenedor_imagen_marca d-flex justify-content-center align-items-center shadow-short">
+                                  <img class="imagen_marca_rounded_max" src="../img/logos/daihatsu.png" width="100%">
+                                </div>
+                          </div>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+      
+          <button type="button" class="slider-nav"></button>
+          <button type="button" class="slider-nav slider-nav-next"></button> 
+      </div>
+    </div>
+
+    <div class="row p-0 m-0 mt-5 w-100">
+        <div class="col-2" id="contenedor_navlateral">
+        </div>
+        <div class="col-10">
+            <div class="row p-0 m-0 mb-4 w-100 d-flex justify-content-start">
+                <div class="col p-0 m-0">
+                    <button class="boton_ver_precios_menor shadow-short">VER MENOR PRECIO</button>
+                    <button class="boton_ver_precios_mayor shadow-short">VER MAYOR PRECIO</button>
+                    <button class="boton_ver_ofertas shadow-short">VER OFERTAS</button>
+                </div>
+            </div>
+            <div class="row p-0 m-0 w-100" id="contenedor_tarjetas">
+                
+            </div>
+            <div class="row p-0 m-0 w-100 mb-2 justify-content-center">
+                <div class="col-2">
+                    <div class="row p-0 m-0">
+                        <button class="btn btn-outline-danger" id="more-products-button-left"><<</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row p-0 m-0">
+                        <button class="btn btn-danger" id="actual-page-position">1</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row p-0 m-0">
+                        <button class="btn btn-outline-danger" id="next-page-position" data-target="2">2</button>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="row p-0 m-0">
+                        <button class="btn btn-outline-danger" id="more-products-button-right">>></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module">
+        import * as tarjetas from "../js/components/tarjeta.js";
+        import * as categorias from "../js/categorias.js";
+
+        LoadComponent("../components/navlateral.html","contenedor_navlateral");
+        LoadComponent("../components/navbar.html","vista-response");
+        LoadComponent("../components/chat.html","chat-response");
+
+        let quan = 1
+
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        const searchValue = params.get('valorbusqueda');
+        const categoryValue = params.get('valorcategoria');
+        if(searchValue != "" && searchValue != null || categoryValue != "" && categoryValue != null){
+          BuscarProducto()
+        }else{
+          LoadComponent("../components/tarjeta.html","contenedor_tarjetas");
+        }
+
+        const buttonleft = document.getElementById('next-page-position');
+        buttonleft.addEventListener('click', function() {
+            let act = Number($("#next-page-position").attr("data-target"))
+            quan = ( act + 1)
+
+            $("#actual-page-position").html(act)
+
+            $("#next-page-position").attr("data-target", quan)
+            $("#next-page-position").html(quan)
+
+            BuscarProducto()
+        });
+
+        //BACK
+        const buttonback = document.getElementById('more-products-button-left');
+        buttonback.addEventListener('click', function() {
+            let act = Number($("#next-page-position").attr("data-target"))
+            console.log(quan)
+            if((quan - 1) == 1 || quan == 1){
+                quan = 1
+                $("#actual-page-position").html(1)
+
+                $("#next-page-position").attr("data-target", 2)
+                $("#next-page-position").html(2)
+            }else{
+                quan = quan - 1
+                $("#actual-page-position").html(quan - 1)
+
+                $("#next-page-position").attr("data-target", quan)
+                $("#next-page-position").html(quan)
+            }
+            
+            BuscarProducto()
+        });
+
+        //NEXT
+        const buttonnext = document.getElementById('more-products-button-right');
+        buttonnext.addEventListener('click', function() {
+            let act = Number($("#next-page-position").attr("data-target"))
+            console.log(quan)
+                quan = quan + 1
+                $("#actual-page-position").html(quan + 1)
+
+                $("#next-page-position").attr("data-target", quan)
+                $("#next-page-position").html(quan)
+            
+            BuscarProducto()
+        });
+
+        function BuscarProducto(){
+          $.get( DireccionPeticiones() + "/Product/GetProductsBySearch?searchValue=" + searchValue + "&category=" + categoryValue + "&quantity=" + quan, (data) =>{
+            $("#contenedor_tarjetas").html(data)
+              tarjetas.AgregarEventosTarjetas()
+              $('html').animate({
+                    scrollTop: $(".boton_ver_precios_menor").offset().top
+                }, 0);
+          })
+        }
+
+        categorias.CargarEventos();
+    </script>
+</body>
+</html>
