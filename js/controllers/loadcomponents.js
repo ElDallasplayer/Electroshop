@@ -24,7 +24,7 @@ const RedireccionarVista = (urlpage) => {
 }
 
 const DireccionPeticiones = () =>{
-  return "https://localhost:7213"; //TESTS
+  //return "https://localhost:7213"; //TESTS
   return "https://dallasito-001-site1.ltempurl.com"; //SERVIDOR
 }
 
