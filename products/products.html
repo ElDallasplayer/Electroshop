@@ -41,8 +41,8 @@
     <!--REFERENCIAS LOCALES-->
     <script src="../js/controllers/loadcomponents.js"></script>
     <link href="../css/site.css" rel="stylesheet" />
-    
-    <link href="../css/producto.css" rel="stylesheet" />
+
+    <link href="./css/products.css" rel="stylesheet" />
     <link href="../css/components/card.css" rel="stylesheet" />
 </head>
 <body>
@@ -54,12 +54,14 @@
     </div>
     
     <script type="module">
-        import * as producto from "../js/producto.js";
+        import * as producto from "./js/products.js";
         import * as tarjetas from "../js/components/tarjeta.js"
 
         const url = new URL(window.location.href);
         const params = new URLSearchParams(url.search);
         const id = params.get('id');
+
+        console.log(id)
 
         $.get(DireccionPeticiones() +"/Product/GetProductPopUp?id=" + id, (data) =>{
                 $("#principal-producto-container").html(data);
@@ -73,7 +75,7 @@
                         if(data.result == "OK"){
                           console.log(data)
                             ActualizarProductosCarrito(data.cantidad)
-                          RedireccionarVista("./compras.html?articulo=" + id);
+                            RedireccionarVista("sales.html?articulo=" + id);
                         }
                     })
                 })

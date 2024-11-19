@@ -50,7 +50,7 @@ $(document).ready( function () {
     })
 
     $("#iconoCarrito").on("click", () =>{
-        RedireccionarVista("compras.html?user=" + ObtenerGuidUser())
+        RedireccionarVista("sales.html?user=" + ObtenerGuidUser())
     })
     let seleccionActual = "";
         $(".submenu-option").on(
@@ -128,7 +128,7 @@ $(document).ready( function () {
             $(".buscador-categoria").off("click").on("click", (e) =>{
                 e.stopImmediatePropagation();
                 let busqueda = e.target.getAttribute("data-busqueda");
-                RedireccionarVista('categorias.html?valorbusqueda=' + busqueda)
+                RedireccionarVista('category.html?valorbusqueda=' + busqueda)
             })
         }
 })

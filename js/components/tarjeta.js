@@ -18,6 +18,6 @@
                 scrollTop: $("#container_producto_popup").offset().top
               }, 0); 
 
-              RedireccionarVista("producto.html?id=" + id)
+              RedireccionarVista("products.html?id=" + id)
         })
     }

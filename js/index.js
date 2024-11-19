@@ -100,7 +100,6 @@ $(document).ready(function () {
     }
 }
 
-
   const AgregarEventosTarjetas = () => {
     $(".tarjeta-producto").on("click", (e) => {
       e.stopImmediatePropagation();
@@ -108,8 +107,9 @@ $(document).ready(function () {
       let id = e.target.getAttribute("data-tarjeta");
       $("#container_producto_popup").empty();
 
-      RedireccionarVista("producto.html?id=" + id)
+      console.log(id)
 
+      RedireccionarVista("products.html?id=" + id)
     });
   };
 });

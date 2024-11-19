@@ -1,4 +1,4 @@
-import * as tarjetas from "./components/tarjeta.js";
+import * as tarjetas from "../../js/components/tarjeta.js";
 
 export function CargarEventos(){
 

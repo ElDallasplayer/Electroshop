@@ -44,7 +44,7 @@
     <script src="../js/controllers/loadcomponents.js"></script>
     <link href="../css/site.css" rel="stylesheet" />
     
-    <link href="../css/cobrosuccess.css" rel="stylesheet" />
+    <link href="./css/payments.css" rel="stylesheet" />
 </head>
 <body>
     <div id="vista-response" class="w-100"></div>
@@ -73,7 +73,7 @@
         LoadComponent("../components/navbar.html","vista-response");
         LoadComponent("../components/chat.html","chat-response");
 
-        function CompletarCompra(){
+        function FisnishSale(){
                 const url = DireccionPeticiones() + "/Mercado/PurchaseSuccess";
                 const data = {
                         collection_id : params.get('collection_id'),
@@ -96,11 +96,10 @@
                     },
                     body: JSON.stringify(data) 
                 }).then(response => {
-                    // Verifica si la respuesta es exitosa
                     if (!response.ok) {
                         throw new Error('Network response was not ok ' + response.statusText);
                     }
-                    return response.text(); // Obtén el texto de la respuesta
+                    return response.text();
                 })
                 .then(data => {
                     $("#principal-respuesta-container").html(data)
@@ -120,7 +119,7 @@
                 });
         }
 
-        CompletarCompra()
+        FisnishSale()
     </script>
 </body>
 </html>

@@ -20,11 +20,11 @@ const RedireccionarPagina = (urlpage) => {
 }
 
 const RedireccionarVista = (urlpage) => {
-  window.location = '/views/' + urlpage;
+  window.location = '../' + urlpage.split(".")[0] + '/' + urlpage;
 }
 
 const DireccionPeticiones = () =>{
-  //return "https://localhost:7213"; //TESTS
+  return "https://localhost:7213"; //TESTS
   return "https://dallasito-001-site1.ltempurl.com"; //SERVIDOR
 }
 
