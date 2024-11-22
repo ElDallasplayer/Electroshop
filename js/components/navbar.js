@@ -14,14 +14,14 @@ $(document).ready( function () {
 
     $("#boton-busqueda-vista-principal").on("click", () => {
         let valorBuscar = $("#buscador-principal-productos-navbar").val()
-        RedireccionarVista('categorias.html?valorbusqueda=' + valorBuscar);
+        RedireccionarVista('category.html?searchValue=' + valorBuscar);
     })
 
     $("#buscador-principal-productos-navbar").keypress(function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if(code==13){
             let busca = $("#buscador-principal-productos-navbar").val();
-            RedireccionarVista('categorias.html?valorbusqueda=' + busca);
+            RedireccionarVista('category.html?searchValue=' + busca);
         }
     });
 
