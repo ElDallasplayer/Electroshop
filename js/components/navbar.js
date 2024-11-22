@@ -128,7 +128,7 @@ $(document).ready( function () {
             $(".buscador-categoria").off("click").on("click", (e) =>{
                 e.stopImmediatePropagation();
                 let busqueda = e.target.getAttribute("data-busqueda");
-                RedireccionarVista('category.html?valorbusqueda=' + busqueda)
+                RedireccionarVista('category.html?searchValue=' + busqueda)
             })
         }
 })
