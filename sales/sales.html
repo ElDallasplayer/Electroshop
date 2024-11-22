@@ -77,10 +77,14 @@
                     Muchas gracias por su compra!
                 </p>
                 <p>
-                    Nos contactaremos con usted una vez este listo su pedido.
+                    Tener en cuenta que los envios seran despachados al dia siguiente de ser abonados.
                 </p>
             </div>
         </div>
+    </div>
+
+    <div class="row p-0 m-0 d-none" id="select-location-container">
+
     </div>
 
     <div class="row p-0 m-0 d-none" id="contenedor_coordinar_envio">
@@ -212,6 +216,11 @@
         let guid = ObtenerGuidUser();
         const idProducto = params.get('articulo');
         let estaLogueado = false;
+        
+        var latitudeSeleccionada;
+        let calleQueEnvia;
+        let detalleEnvio;
+
         $.get(DireccionPeticiones() +"/Product/GetCartProducts?userGuid=" + ObtenerGuidUser() + "&articleId=" + idProducto, (data) =>{
             $("#contenedor_tarjetas_reducidas").html(data)
             CalcularTotales()
@@ -226,6 +235,12 @@
                 estaLogueado = true;
             }
         })
+
+        if($(".boton_eliminar_producto_carrito").length){
+            $(".boton_acceder_a_compra").removeClass("disabled")
+        }else{
+            $(".boton_acceder_a_compra").addClass("disabled")
+        }
 
         LoadComponent("../components/navbar.html","vista-response");
         LoadComponent("../components/chat.html","chat-response");
@@ -278,8 +293,15 @@
             //if(estaLogueado){
             //    CompletarCompra()
             //}else{
-                $("#contenedor_datos_precompra").removeClass("d-none")
+                
             //}
+
+            //CONSULTAR SI EL USUARIO LOGUEADO TIENE O NO UNA LOCATION CARGADA
+            if(UserLogHasLocation()){
+                //USERLOGHASLOCATION CARGA EL HTML EN LA VISTA, Y AQUI ASIGNO LAS FUNCIONALIDADES FUERA DEL HTML INSERTADO
+            }else{
+                
+            }
         })
 
         $(".contenedor-blur-t").on("click", (e) =>{
@@ -495,11 +517,12 @@
                     products: [],
                     guidid: guid,
                     direction: {
-                        direction: $("#envio_direccion").val(),
+                        direcction: dataSendBuy.calle,
+                        detallecompra: dataSendBuy.detalleEnvio,
                         postalcode: $("#envio_codigo_postal").val(),
                         city: $("#envio_localidad").val(),
-                        StreetBetweenLeft: $("#envio_calle1").val(),
-                        StreetBetweenRigth: $("#envio_calle2").val()
+                        StreetBetweenLeft: dataSendBuy.lat,
+                        StreetBetweenRigth: dataSendBuy.lng
                     },
                     clientpurchase: {
                         clientphone: ($("#numeroDetelefono").val() != ""?$("#numeroDetelefono").val() : $("#numero-telefono-compra").val()),
@@ -532,6 +555,106 @@
                 });
         }
 
+        let dataSendBuy;
+        function UserLogHasLocation(){
+            let scopeData = { userGuid: guid };
+
+            let scopeUrl = DireccionPeticiones() + "/Home/UserHasLocationCreated";
+                fetch(scopeUrl, {
+                    method: 'POST', 
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(scopeData) 
+                })
+                .then(response => response.json())
+                .then(data => {
+                        if(data.result == "OK" || data.result == "NOOK" || data.result == "ERROR"){
+                            $.get(DireccionPeticiones() + "/Home/GetLocationCreated?userGuid=" + guid,(res) => {
+                                $("#select-location-container").append(res)
+                                $(".map-contenedor").slideUp(
+                                    "fast",
+                                    () =>{
+                                        $("#select-location-container").removeClass("d-none")
+                                    }
+                                )
+                                
+                                $(".contenedor-blur-u").on("click", (e)=>{
+                                    e.stopImmediatePropagation()
+                                    $("#select-location-container").empty().addClass("d-none")
+                                })
+
+                                $("#boton-ver-mapa").on("click", (e) =>{
+                                    e.stopImmediatePropagation();
+                                    $("#contenedor-opciones-direccion-calle").slideToggle()
+                                    $(".map-contenedor").slideToggle()
+
+                                    var element = document.getElementById("continue-button-ubicacion");
+
+                                    element.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                })
+
+                                $("#continue-button-ubicacion").on("click", (e) =>{
+                                    e.stopImmediatePropagation()
+                                    
+                                    calleQueEnvia = $("#userCalle").val();
+                                    detalleEnvio = $("#userDetalleDeRecepcion").val();
+
+                                    $("#select-location-container").empty().addClass("d-none")
+                                    
+                                   dataSendBuy = { userGuid: guid, calle: calleQueEnvia, detalleEnvio: detalleEnvio, lat: latitudeSeleccionada.lat, lng: latitudeSeleccionada.lng}
+                                    
+                                    fetch(DireccionPeticiones() + "/Home/SaveUserLocation", {
+                                        method: 'POST', 
+                                        headers: {
+                                            'Content-Type': 'application/json'
+                                        },
+                                        body: JSON.stringify(dataSendBuy) 
+                                    })
+                                    .then(response => response.json())
+
+                                    $.get(DireccionPeticiones() + "/Home/GetUserNameAndPhone?userGuid=" + guid,(response) => {
+
+                                        if(response.result == "OK"){
+                                            $("#nombre-completo-compra").val(response.name)
+                                            $("#numero-telefono-compra").val(response.cellphone)
+                                            if(response.cellphone.length > 6){
+                                                $("#boton_continuarcompra").removeClass("disabled").off("click").on("click", () =>{
+                                                    CompletarCompra();
+                                                })
+                                            }
+                                        }
+
+                                        $("#contenedor_datos_precompra").removeClass("d-none")
+                                    })
+                                    
+                                })
+
+                                if($("#userCalle").val() != ""){
+                                    $("#continue-button-ubicacion").prop("disabled", false)
+                                }else{
+                                    $("#userCalle").on("change", ()=>{
+                                        if($("#userCalle").val() != ""){
+                                            $("#continue-button-ubicacion").prop("disabled", false)
+                                        }else{
+                                            $("#continue-button-ubicacion").prop("disabled", true)
+                                        }
+                                    })
+                                }
+                            })
+
+                            return true;
+                        }else{
+
+                            console.log("NO LOGUEADO")
+                            return false;
+                        }
+                })
+        }
+        
     </script>
 </body>
 </html>

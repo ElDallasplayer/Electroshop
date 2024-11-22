@@ -59,6 +59,17 @@
                 <label class="label-form-login">Reptir contraseña</label>
                 <input class="input-macheo-password input-obligatorio" type="password" placeholder="Contraseña..." />
             </div>
+
+            <div class="contenedor-telefono">
+                <label class="label-form-login">Nombre completo</label>
+                <input type="text" class="input-dato-nombre-completo input-obligatorio" placeholder="Nombre completo..." title="Si bien este campo no es obligatorio, es recomendable completrlo para mejorar la calidad de atencion. Muchas gracias!"/>
+            </div>
+
+            <div class="contenedor-telefono">
+                <label class="label-form-login">DNI/CUIT:</label>
+                <input type="text" class="input-dato-documento input-obligatorio" placeholder="Documento..." title="Si bien este campo no es obligatorio, es recomendable completrlo para mejorar la calidad de atencion. Muchas gracias!"/>
+            </div>
+
             <div class="contenedor-telefono">
                 <label class="label-form-login">Telefono</label>
                 <input type="text" class="input-dato-telefono input-obligatorio" placeholder="Numero de celular..." title="Si bien este campo no es obligatorio, es recomendable completrlo para mejorar la calidad de atencion. Muchas gracias!"/>
@@ -127,7 +138,9 @@
                 let email = $(".input-dato-usuario").val();
                             let password = $(".input-dato-password").val();
                             let telefono = $(".input-dato-telefono").val();
-                            $.get( DireccionPeticiones() + "/Home/RegistrarUsuario?email=" + email + "&password=" + password + "&numerotelefono=" + telefono, (data) => {
+                            let nombreCompleto = $(".input-dato-nombre-completo").val();
+                            let documento = $(".input-dato-documento").val();
+                            $.get( DireccionPeticiones() + "/Home/RegistrarUsuario?email=" + email + "&password=" + password + "&numerotelefono=" + telefono + "&documento=" + documento + "&nombrecompleto=" + nombreCompleto, (data) => {
                                 if(data.result == "OK"){
                                     IniciarSesion(email,password)
                                     alert(data.message);

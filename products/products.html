@@ -61,8 +61,6 @@
         const params = new URLSearchParams(url.search);
         const id = params.get('id');
 
-        console.log(id)
-
         $.get(DireccionPeticiones() +"/Product/GetProductPopUp?id=" + id, (data) =>{
                 $("#principal-producto-container").html(data);
                 producto.CambiarImagenClick();
@@ -73,7 +71,7 @@
                     let productId = e.target.getAttribute("data-id-producto");
                     $.get( DireccionPeticiones() + "/Product/PutProductInCart?articleId=" + productId + "&userGuid=" + ObtenerGuidUser(), (data) =>{
                         if(data.result == "OK"){
-                          console.log(data)
+                            console.log(data)
                             ActualizarProductosCarrito(data.cantidad)
                             RedireccionarVista("sales.html?articulo=" + id);
                         }

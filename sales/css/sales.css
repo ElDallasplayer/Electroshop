@@ -342,3 +342,62 @@
 .contenedor-opciones-coordinar-envio{
     margin-bottom: 1rem;
 }
+
+/*TERMINAR REGISTRO USUARIO UBICACION*/
+.contenedor-blur-u{
+    position: absolute;
+    width: 100wh;
+    height: 100vh !important;
+    background-color: black;
+    z-index: 999;
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+#select-location-container{
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+}
+.contenedor-principal-ubicacion{
+    z-index: 1000;
+    width: 60% !important;
+    padding: 1rem !important;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: var(--bs-gray-100);
+    border: 5px solid black;
+    border-radius: .5rem;
+}
+
+#boton-ver-mapa{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.map-contenedor{
+        width: 100%; /* El contenedor ocupa todo el ancho disponible */
+      height: 500px; /* Altura fija, puedes ajustarla según tus necesidades */
+      position: relative;
+}
+
+#map{
+    overflow: hidden;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: absolute !important;
+    width: 100%; /* Asegura que el mapa ocupe todo el ancho de su contenedor */
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 500px;
+    border-radius: 0.2rem;
+    border: 1px solid var(--bs-gray-400);
+}
+
+#continue-button-ubicacion{
+    margin-top: 2rem;
+    padding: 2rem;
+}

@@ -227,6 +227,20 @@ html{
     right: 0;
 }
 
+.input-dato-nombre-completo{
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
+.input-dato-documento{
+    position: absolute;
+    padding: 10px;
+    left: 0;
+    right: 0;
+}
+
 .label-numero-celular{
     position: absolute;
     width: 30%;
