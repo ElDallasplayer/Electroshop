@@ -21,7 +21,7 @@ import * as tarjetas from "./tarjeta.js";
                 Cheked = Cheked.replace("_" + idBusqueda,"")
             }
         
-            $.get(DireccionPeticiones() + "/Productos/ObtenerProductosSegunFiltro?filtros=" + Cheked, (data) =>{
+            $.get(DireccionPeticiones() + "/Product/GetProductsByFilters?filters=" + Cheked, (data) =>{
                 $("#" + valorId).html(data)
                 tarjetas.AgregarEventosTarjetas()
             })
