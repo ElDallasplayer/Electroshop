@@ -1,6 +1,6 @@
 $(document).ready( function (){
     
-    $(".chat-container").slideUp();
+    $(".chat-container").slideToggle();
 
     $(".chat-principal-icon").on("click", (e) => {
         e.stopImmediatePropagation();
