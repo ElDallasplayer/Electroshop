@@ -49,8 +49,24 @@
   <body>
     <div id="vista-response" class="w-100"></div>
     <div id="chat-response" class="w-100" style="z-index: 95000;"></div>
+    
 
     <div id="carouselBanners" class="carousel slide" data-bs-ride="carousel" style="z-index: 0;">
+      <div class="father-cards-container">
+        <p class="title-selection-cards">SELECCION DE HOY</p>
+        <div class="container">
+          <div data-text="Lutin Home" style="--r:-15;" class="glass">
+            
+            <p style="color: white;" onclick="RedireccionarVista('category.html?searchValue=PEABODY')">PEABODY</p>
+          </div>
+          <div data-text="Liliana" style="--r:5;" class="glass">
+            <p style="color: white;" onclick="RedireccionarVista('category.html?searchValue=LILIANA')">LILIANA</p>
+          </div>
+          <div data-text="Peabody" style="--r:25;" class="glass">
+            <p style="color: white;"  onclick="RedireccionarVista('category.html?searchValue=LUTIN')">LUTIN HOME</p>
+          </div>
+        </div>
+      </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="./img/banners/banner 2.jpg" class="d-block w-100" alt="...">

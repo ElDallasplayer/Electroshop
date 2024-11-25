@@ -382,11 +382,13 @@
 }
 
 .precio_popup{
+    font-size: 35px;
     margin-top: 20px;
     margin-left: 30px;
 }
 
 .mensaje-cuotas-popup{
+    font-size: 25px;
     margin-top: 2rem;
     margin-left: 2rem;
 }
@@ -619,4 +621,12 @@
 
 #contenedor-caracteristicas-producto{
     height: 400px !important;
+}
+
+.minimal-decimal-price{
+    position:realtive;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    top: 0px !important;
 }

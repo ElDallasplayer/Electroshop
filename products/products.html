@@ -45,6 +45,9 @@
     <link href="./css/products.css" rel="stylesheet" />
     <link href="../css/components/card.css" rel="stylesheet" />
 </head>
+<style>
+  
+</style>
 <body>
     <div id="vista-response" class="w-100"></div>
     <div id="chat-response" class="w-100" style="z-index: 95000;"></div>
@@ -76,6 +79,12 @@
                             RedireccionarVista("sales.html?articulo=" + id);
                         }
                     })
+                })
+
+                $(".cuotes-values-container").slideToggle()
+                $("#boton-ver-cuotas-producto").on("click", (e) =>{
+                  e.stopImmediatePropagation()
+                  $(".cuotes-values-container").slideToggle()
                 })
 
                 $(".botonAgregarCarrito").on("click", (e) =>{
