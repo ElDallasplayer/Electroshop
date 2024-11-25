@@ -55,7 +55,7 @@ const IniciarSesion = (email, password) =>{
       $(".nombre_usuario_logueado").html(data.username)
 
       $(".component").append(
-        $("<div class='gray-container-main'></div><dialog open class='sayhellocontainer'><h1 class='text-hello-popup'> ¡Bienvenido denuevo " + data.username + "!</h1></dialog>")
+        $("<div class='gray-container-main'></div><dialog open class='sayhellocontainer'><h1 class='text-hello-popup'> ¡Bienvenido " + data.username + "!</h1></dialog>")
       )
     }else{
       alert("Usuario o contraseña incorrectos.")
