@@ -49,6 +49,18 @@ $(document).ready( function (){
         LlevarAWhatsapp()
     })
 
+    $("#boton-confirmar-datos-basicos").on("click", (e) => {
+        e.stopImmediatePropagation()
+
+        $.get(DireccionPeticiones() + "/Mensajes/InsertarMensajeCliente?numerotelefono=" + $(".container-celular-chat").val() + "&nombrecompleto=" + $(".container-nombre-chat").val(), (data) =>{
+           if(data.result == "OK"){
+            ConstruirMensaje(data.message,false)
+            ConstruirMensajeRecibido(data.respuestacliente)
+            $(".container-form-mensaje").slideUp()
+           }
+        })
+    })
+
     function EnviarMensaje(){
         let mensaje = $("#text-message").val();
         if(mensaje != ""){
@@ -59,16 +71,16 @@ $(document).ready( function (){
     }
 
     function ObtenerMensajes(){
-        $.get(DireccionPeticiones() + "/Mensajes/ObtenerMensajes", (data) =>{
-            let mensajesRespueta = data.mensajes;
-            for(let i = 0; i < mensajesRespueta.length; i++){
-                if(mensajesRespueta[i].esRespuesta){
-                    ConstruirMensajeRecibido(mensajesRespueta[i].mensajeAdjunto)
-                }else{
-                    ConstruirMensaje(mensajesRespueta[i].mensajeAdjunto,false)
-                }
-            }
-        })
+        //$.get(DireccionPeticiones() + "/Mensajes/ObtenerMensajes", (data) =>{
+         //   let mensajesRespueta = data.mensajes;
+         //   for(let i = 0; i < mensajesRespueta.length; i++){
+         //       if(mensajesRespueta[i].esRespuesta){
+         //           ConstruirMensajeRecibido(mensajesRespueta[i].mensajeAdjunto)
+         //       }else{
+         //           ConstruirMensaje(mensajesRespueta[i].mensajeAdjunto,false)
+         //       }
+         //   }
+        //})
     }
     ObtenerMensajes()
 
@@ -81,11 +93,11 @@ $(document).ready( function (){
         $("#text-message").val("");
 
         if(enviar){
-            $.get(DireccionPeticiones() + "/Mensajes/InsertarMensajeCliente?idmensajes=1&usuario=1&mensaje=" + mensaje , (data) =>{
-                if(data.result != "OK"){
-                    console.log(data)
-                }
-            })
+            //$.get(DireccionPeticiones() + "/Mensajes/InsertarMensajeCliente?idmensajes=1&usuario=1&mensaje=" + mensaje , (data) =>{
+            //    if(data.result != "OK"){
+            //        console.log(data)
+            //    }
+            //})
         }
     }
 

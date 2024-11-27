@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+    </style>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        @page {
+            margin-left: 0.7cm;
+            margin-right: 0.7cm;
+            margin-top: 0.5cm;
+            margin-botton: 0.5cm;
+        }
+
+        body {
+            font-family: "calibri", sans-serif;
+            font-size: 0.6em;
+        }
+
+        p {
+            margin: 0px;
+        }
+
+        div.seccion-cabecera {
+            background: #f0f0f0
+        }
+
+        div.seccion-cabecera-datos {
+            background: #fafafa;
+        }
+
+        div.seccion-cabecera-comprador {
+            background: #f0f0f0;
+            font-size: 12px
+        }
+
+        div.seccion-cabecera-condiciones {
+            background: #fafafa
+        }
+
+        div.seccion-footer {
+            border: none;
+            position: relative;
+        }
+
+        div.columna {
+            margin: 1em;
+        }
+
+        div.columnaHeader {
+            padding: .4em;
+        }
+
+        div.columna-izquierda-header {
+            float: left;
+            width: 40%;
+            border: 0px solid #069;
+            font-size: 12px
+        }
+
+
+        div.columna-izquierda {
+            float: left;
+            width: 50%;
+            border: 0px solid #069;
+            font-size: 12px
+        }
+
+        div.columna-derecha {
+            float: right;
+            width: 45%;
+            border: 0px solid #f00;
+            text-align: right;
+            font-size: 12px
+        }
+
+        div.columna-codigo-barra {
+            float: left;
+            width: 50%
+        }
+
+        div.columna-cae {
+            float: right;
+            width: 30%
+        }
+
+
+        div.float-right {
+            float: right;
+        }
+
+        div.float-left {
+            float: left;
+        }
+
+        div.codigo-factura {
+            width: 100px !important;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        div.codigo-factura>p.tipo-factura {
+            font-size: 4em;
+            background: #666;
+            margin: 0px;
+            border: 0px solid #999;
+            color: #fff;
+            width: 60px
+        }
+
+        p.descripcion-codigo-factura {
+            width: 60px;
+            text-align: center
+        }
+
+        div.total {
+            height: 15em;
+        }
+
+        p.razon-social,
+        em {
+            font-weight: bold;
+        }
+
+        p.titulo {
+            font-size: 17px;
+        }
+
+        table.articulos {
+            -fs-table-paginate: paginate;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table.tabla-datos-comprobante-footer {
+            width: 100%;
+        }
+
+        tr.cabecera {
+            background-color: #bbb;
+            color: #fff
+        }
+
+        tr.cabecera th,
+        tr.lineas-articulos td {
+            border: 0px solid black;
+            padding: 4px
+        }
+
+        tr.cabecera>th.precio-unitario {
+            width: 10%;
+        }
+
+        tr.cabecera>th.precio-neto {
+            width: 15%;
+        }
+
+        tr.cabecera>th.detalle {
+            width: 75%;
+        }
+
+        span.right-align {
+            float: right;
+        }
+
+        span.left-align {
+            float: left;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        #footer {
+            position: running(footer);
+        }
+
+        #footer-ultima-pagina {
+            position: running(footer-ultima-pagina);
+        }
+
+        div.wrapper {
+            page-break-after: always;
+        }
+
+        @page {
+            @bottom-center {
+                content: element(footer);
+            }
+
+            size: 8.5in 11in;
+            margin-bottom: 300px;
+        }
+
+        @page last {
+            @bottom-center {
+                content: element(footer-ultima-pagina);
+            }
+
+            size: 8.5in 11in;
+            margin-bottom: 300px;
+        }
+
+        #ultima-pagina {
+            page: last;
+        }
+
+        span.pagina-actual:before {
+            content: counter(page);
+        }
+
+        span.cantidad-de-paginas:before {
+            content: counter(pages);
+        }
+
+        div.align-center {
+            text-align: center;
+            width: 100%;
+        }
+
+
+        .codigo-barras {
+            width: 400px;
+            height: 20px;
+        }
+
+        .logo {
+            height: 70px;
+            margin: auto;
+            margin-top: -10px;
+            margin-bottom: 8px;
+        }
+
+        .codigo-qr {
+            width: 100px;
+            height: 100px;
+        }
+
+        p.leyenda-codigo-barras {
+            text-align: center;
+        }
+
+        .moneda {
+            text-align: right;
+        }
+
+        td.detalle-articulo {
+            padding: 1em 0;
+        }
+
+        .monotype {
+            font-family: 'Roboto Mono', monospace, courier;
+            font-size: 1.2em;
+        }
+
+        tr.lineas-articulos td {
+            border-right: 1px solid #eee
+        }
+
+        tr.lineas-articulos td.ultimatd {
+            border: none
+        }
+    </style>
+</head>
+
+<body>
+    {{#paginas}}
+
+
+
+    <footer id="footer">
+        <table class="tabla-datos-comprobante-footer" style="border:none;" border="0">
+            {{#comprobante.leyendaMonotributista}}
+            <tr>
+                <td colspan="3" style="font-size: 8px;">{{comprobante.leyendaMonotributista}}</td>
+            </tr>
+            {{/comprobante.leyendaMonotributista}}
+            {{#configPlantilla.mostrarVendedor}}
+            <tr>
+                <td>
+                    {{#comprobante.vendedor}}<p><b>Vendedor:</b> {{comprobante.vendedor.nombreCombo}}</p>
+                    {{/comprobante.vendedor}}
+                </td>
+            </tr>
+            {{/configPlantilla.mostrarVendedor}}
+            <td>Transporte: {{comprobante.moneda.descripcionCorta}}{{transporteFormateado}}</td>
+        </table>
+        <div class="seccion-footer clearfix" style="border:none; position:relative;{{configPlantilla.colorFooter}}">
+            <div class="columna columna-izquierda" style="font-size:14px;">
+                {{#configPlantilla.mostrarReglasDescuento}}
+                <p style="font-size: 10px;"><b>Reglas descuento: </b></p>
+                {{/configPlantilla.mostrarReglasDescuento}}
+                {{#configPlantilla.mostrarBultos}}
+                <p style="font-size: 10px;"><b>Cantidad bultos:</b> {{comprobante.cantidadDeBultos}}</p>
+                {{/configPlantilla.mostrarBultos}}
+                {{#configPlantilla.mostrarObservaciones}}
+                <p style="font-size: 11px;">
+                    {{#comprobante.observacionesDocumento}}
+                <p>{{.}}</p>
+                {{/comprobante.observacionesDocumento}}
+                {{#comprobante.observaciones}}
+                <p>{{.}}</p>
+                {{/comprobante.observaciones}}
+                </p>
+                {{/configPlantilla.mostrarObservaciones}}
+
+                <table width="45%" border="0" style="font-size:10px; position:absolute; bottom:5px; left:5px">
+                    <tr>
+                        {{#comprobante.mostrarCaeYQr}}
+                        <div>
+                            {{#configPlantilla.mostrarQR}}
+                            <td width="110">
+                                <div class="codigo-qr" data-codigo-qr="{{comprobante.toJsonQR}}"></div>
+                            </td>
+                            {{/configPlantilla.mostrarQR}}
+                        </div>
+                        {{/comprobante.mostrarCaeYQr}}
+                        <td valign="bottom">
+                            {{#comprobante.mostrarCaeYQr}}
+                            <div>
+                                {{#configPlantilla.mostrarQR}}
+                                <p>CAE: <em> {{comprobante.cae}}</em><br />Vencimiento CAE:
+                                    <em>{{comprobante.vencimientoCaeString}}</em>
+                                </p>
+                                {{/configPlantilla.mostrarQR}}
+                            </div>
+                            {{/comprobante.mostrarCaeYQr}}
+                            <p class="monotype"><b>Página <span class="pagina-actual"></span> de <span
+                                        class="cantidad-de-paginas"></span></b></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {{^comprobante.discriminaIVA}}
+            <div class="columna columna-derecha total clearfix">
+                <div class="float-left">
+                    <p><b>Descuento</b>:</p>
+                    <p><b>Total</b>:</p>
+                </div>
+                <div class="float-right moneda">
+                    <p>{{comprobante.descuentoFormateado}}</p>
+                    <p>{{comprobante.importeTotalFormateadoPdf}}</p>
+                </div>
+            </div>
+            {{/comprobante.discriminaIVA}}
+            {{#comprobante.discriminaIVA}}
+            <div class="columna columna-derecha total clearfix">
+                <div class="float-left">
+                    <p><b>Sub Total</b>:</p>
+                    <p><b>Descuento</b>:</p>
+                    {{#comprobante.alicuotasIva}}
+                    <p><b>Neto gravado al {{tipo.descripcion}}</b>:</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.alicuotasIva}}
+                    <p><b>Iva {{tipo.descripcion}}</b>:</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.tieneNoGravado}}
+                    <p><b>No Gravado</b>:</p>
+                    {{/comprobante.tieneNoGravado}}
+                    {{#comprobante.tributos}}
+                    <p>{{descripcionParaImpresion}}</p>
+                    {{/comprobante.tributos}}
+                    <p><b>Total</b>:</p>
+                </div>
+                <div class="float-right moneda">
+                    <p>{{comprobante.importeNetoFormateado}}</p>
+                    <p>{{comprobante.descuentoFormateado}}</p>
+                    {{#comprobante.alicuotasIva}}
+                    <p>{{baseImponibleFormateada}}</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.alicuotasIva}}
+                    <p>{{importeFormateado}}</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.tieneNoGravado}}
+                    <p>{{comprobante.importeNoGravadoFormateado}}</p>
+                    {{/comprobante.tieneNoGravado}}
+                    {{#comprobante.tributos}}
+                    <p>{{importeFormateado}}</p>
+                    {{/comprobante.tributos}}
+                    <p>{{comprobante.importeTotalFormateadoPdf}}</p>
+                </div>
+            </div>
+            {{/comprobante.discriminaIVA}}
+        </div>
+        <div class="clearfix">
+            <p style="text-align:right"><a style="text-decoration:none; color:#000" target="_blank"
+                    href="https://www.netegia.com.ar">Powered by <b>Netegia</b></a></p>
+        </div>
+    </footer>
+
+    <footer id="footer-ultima-pagina">
+        <table class="tabla-datos-comprobante-footer" style="border:none;" border="0">
+            {{#comprobante.leyendaMonotributista}}
+            <tr>
+                <td colspan="3" style="font-size: 8px;">{{comprobante.leyendaMonotributista}}</td>
+            </tr>
+            {{/comprobante.leyendaMonotributista}}
+            {{#configPlantilla.mostrarVendedor}}
+            <tr>
+                <td>
+                    {{#comprobante.vendedor}}<b>Vendedor:</b> {{comprobante.vendedor.nombreCombo}}
+                    {{/comprobante.vendedor}}
+                </td>
+            </tr>
+            {{/configPlantilla.mostrarVendedor}}
+        </table>
+        <div class="seccion-footer clearfix" style="position:relative;{{configPlantilla.colorFooter}}">
+            <div class="columna columna-izquierda" style="font-size:14px;">
+                {{#configPlantilla.mostrarReglasDescuento}}
+                <p style="font-size: 10px;"><b>Reglas descuento: </b></p>
+                {{/configPlantilla.mostrarReglasDescuento}}
+                {{#configPlantilla.mostrarBultos}}
+                <p style="font-size: 10px;"><b>Cantidad bultos:</b> {{comprobante.cantidadDeBultos}}</p>
+                {{/configPlantilla.mostrarBultos}}
+
+                
+
+
+                {{#configPlantilla.mostrarObservaciones}}
+                <p style="font-size: 11px;">
+                    {{#comprobante.observacionesDocumento}}
+                <p>{{.}}</p>
+                {{/comprobante.observacionesDocumento}}
+                {{#comprobante.observaciones}}
+                <p>{{.}}</p>
+                {{/comprobante.observaciones}}
+                </p>
+                {{/configPlantilla.mostrarObservaciones}}
+                <table width="70%" border="0" style="font-size:10px; position:absolute; bottom:5px; left:5px">
+                    <tr>
+                        {{#comprobante.mostrarCaeYQr}}
+                        <div>
+                            {{#configPlantilla.mostrarQR}}
+                            <td width="110">
+                                <div class="codigo-qr" data-codigo-qr="{{comprobante.toJsonQR}}"></div>
+                            </td>
+                            {{/configPlantilla.mostrarQR}}
+                        </div>
+                        {{/comprobante.mostrarCaeYQr}}
+                        <td valign="bottom" width="200" >
+                            {{#comprobante.mostrarCaeYQr}}
+                            <div>
+                                {{#configPlantilla.mostrarQR}}
+                                <p>CAE: <em>{{comprobante.cae}}</em><br />Vencimiento CAE:
+                                    <em>{{comprobante.vencimientoCaeString}}</em>
+                                </p>
+                                {{/configPlantilla.mostrarQR}}
+                            </div>
+                            {{/comprobante.mostrarCaeYQr}}
+                            <p class="monotype"><b>Página <span class="pagina-actual"></span> de <span
+                                        class="cantidad-de-paginas"></span></b></p>
+                        </td>
+                        <td valign="bottom" width="320">
+                          {{#configPlantilla.mostrasIvaContenido}}
+                          <div>
+                            {{comprobante.leyendasIvaContenido}}
+                          </div>
+                          {{/configPlantilla.mostrasIvaContenido}}
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {{^comprobante.discriminaIVA}}
+            <div class="columna columna-derecha total clearfix">
+                <div class="float-left">
+                    <p><b>Descuento</b>:</p>
+                    <p><b>Total</b>:</p>
+                </div>
+                <div class="float-right moneda">
+                    <p>{{comprobante.descuentoFormateado}}</p>
+                    <p>{{comprobante.importeTotalFormateadoPdf}}</p>
+                </div>
+            </div>
+            {{/comprobante.discriminaIVA}}
+            {{#comprobante.discriminaIVA}}
+            <div class="columna columna-derecha total clearfix">
+                <div class="float-left">
+                    <p><b>Sub Total</b>:</p>
+                    <p><b>Descuento</b>:</p>
+                    {{#comprobante.alicuotasIva}}
+                    <p><b>Neto gravado al {{tipo.descripcion}}</b>:</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.alicuotasIva}}
+                    <p><b>Iva {{tipo.descripcion}}</b>:</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.tieneNoGravado}}
+                    <p><b>No Gravado</b>:</p>
+                    {{/comprobante.tieneNoGravado}}
+                    {{#comprobante.tributos}}
+                    <p>{{descripcionParaImpresion}}</p>
+                    {{/comprobante.tributos}}
+                    <p><b>Total</b>:</p>
+                </div>
+                <div class="float-right moneda">
+                    <p>{{comprobante.importeNetoFormateado}}</p>
+                    <p>{{comprobante.descuentoFormateado}}</p>
+                    {{#comprobante.alicuotasIva}}
+                    <p>{{baseImponibleFormateada}}</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.alicuotasIva}}
+                    <p>{{importeFormateado}}</p>
+                    {{/comprobante.alicuotasIva}}
+                    {{#comprobante.tieneNoGravado}}
+                    <p>{{comprobante.importeNoGravadoFormateado}}</p>
+                    {{/comprobante.tieneNoGravado}}
+                    {{#comprobante.tributos}}
+                    <p>{{importeFormateado}}</p>
+                    {{/comprobante.tributos}}
+                    <p>{{comprobante.importeTotalFormateadoPdf}}</p>
+                </div>
+            </div>
+            {{/comprobante.discriminaIVA}}
+        </div>
+        <div class="clearfix">
+            <p style="text-align:right"><a style="text-decoration:none; color:#000" target="_blank"
+                    href="https://www.netegia.com.ar">Powered by <b>Netegia</b></a></p>
+        </div>
+    </footer>
+    {{#ultimaPagina}}
+    <div id="ultima-pagina">
+        {{/ultimaPagina}}
+        {{^ultimaPagina}}
+        <div class="wrapper">
+            {{/ultimaPagina}}
+            <header>
+                <div class="seccion-cabecera-datos clearfix" style="padding-top:0px; {{configPlantilla.colorHeader}}">
+                    <div class="columnaHeader columna-izquierda-header">
+                        {{#configPlantilla.mostrarLogo}}
+                        <img src='{{comprobante.logoFactura}}' class="logo" />
+                        {{/configPlantilla.mostrarLogo}}
+                        <p class="razon-social titulo">Ariel Ricca</p>
+                        <div class="datos-empresa">
+                            <p>{{comprobante.direccionEmpresaFormateada}}</p>
+                            <p>Email: electronorte.admi@hotmail.com<br />{{comprobante.webEmpresa}}</p>
+                            <p>Teléfonos: 11 5400-1507</p>
+                            <p>{{comprobante.condicionIvaEmpresa.descripcion}}</p>
+                        </div>
+                    </div>
+                    <div class="columnaHeader columna-derecha">
+                        <p style="text-transform:uppercase; font-size:16px; font-style:normal">
+                            <em>FACTURA</em>
+                        </p>
+                        <p>{{comprobante.tituloCopia}}</p>
+                        <p>Nº <em>{{comprobante.puntoVenta.codigoFormateado}} -
+                                {{comprobante.numeroComprobanteFormatedo}}</em></p>
+                        <p>Fecha: <em>{{comprobante.fechaHumana}}</em></p>
+                        <p>C.U.I.T.: <em>{{comprobante.cuitEmpresaFormateado}}</em></p>
+                        <p>Ingresos brutos Nº <em>30716735040</em></p>
+                        <p>Inicio de actividad <em>01/03/2020</em></p>
+                        {{#comprobante.esServicio}}
+                        <p>Período Servicio: <em>{{comprobante.fechaServicioDesdeHumana}}</em> al
+                            <em>{{comprobante.fechaServicioHastaHumana}}</em>
+                        </p>
+                        <p>Vencimiento Servicio: <em>{{comprobante.fechaServicioVencimientoHumana}}</em></p>
+                        {{/comprobante.esServicio}}
+
+                    </div>
+                    <div class="codigo-factura">
+                        <p class="tipo-factura"><b>A</b></p>
+                        <p class="descripcion-codigo-factura" style="font-size:12px">
+                            <!-- Código Nº -->{{comprobante.tipo.idFormateado}}
+                        </p>
+                    </div>
+                </div>
+                <div class="seccion-cabecera-comprador clearfix columnaHeader"
+                    style="{{configPlantilla.colorBodyTabla}}">
+                    <div class="columnaHeader">
+                        {{#configPlantilla.mostrarDatosCliente}}
+                        <div class="columna-izquierda">
+                            <p><b>SR/ES</b>: {{comprobante.nombreCliente}} <b>C.U.I.T.</b>:
+                                {{comprobante.cuitFormateadoCliente}} - {{comprobante.condicionCliente.descripcion}}</p>
+                            <p><b>Dirección</b>: {{comprobante.direccionClienteFormateada}}</p>
+                            <p><b>Email</b>: {{comprobante.emailCliente}} <br /><b>Teléfono</b>:
+                                {{comprobante.telefonoCliente}}</p>
+                        </div>
+                        <div class="columna-derecha">
+                            <p>Condición de venta: <em>{{comprobante.leyendaDePago}}</em></p>
+                            <p><em></em></p>
+                            <p><em></em></p>
+
+                            <p>Moneda: {{comprobante.moneda.nombre}}</p>
+                            {{#comprobante.noEsMonedaHomologada}}
+                            <p>
+                                <em></em>
+                            </p>
+                            {{/comprobante.noEsMonedaHomologada}}
+                            {{#configPlantilla.mostrarDatosTransporte}}
+                            <p>Fecha de salida: <b>{{comprobante.fechaSalidaTransporteFormateada}} </b></p>
+                            <p>Transportista: <em>{{comprobante.transportista.razonSocial}}</em></p>
+                            <p>Trasporte: <b>{{comprobante.transporte.descripcion}} </b></p>
+                            <p>Vehiculo: <b>{{comprobante.patenteTransporte}} </b></p>
+                            {{/configPlantilla.mostrarDatosTransporte}}
+                        </div>
+                        {{/configPlantilla.mostrarDatosCliente}}
+                    </div>
+                </div>
+
+            </header>
+            <table class="articulos" padding="0" margin="0">
+                <thead>
+                    <tr class="cabecera" style="{{configPlantilla.colorHeaderTabla}}">
+                        <th class="cantidad">Cant.</th>
+                        {{#configPlantilla.mostrarCodigoArticulo}}
+                        <th class="cantidad">Codigo</th>
+                        {{/configPlantilla.mostrarCodigoArticulo}}
+                        <th class="detalle">Detalle</th>
+                        {{#configPlantilla.mostrardescuentoArticulo}}
+                        <th class="descuento">Descuento</th>
+                        {{/configPlantilla.mostrardescuentoArticulo}}
+                        {{#configPlantilla.mostrarPrecioUnitarioArticulo}}
+                        <th class="precio-unitario" align="right">Pcio. Unit.</th>
+                        {{/configPlantilla.mostrarPrecioUnitarioArticulo}}
+                        {{#configPlantilla.mostrarPrecioNetoArticulo}}
+                        <th class="precio-neto" align="right">Precio Neto</th>
+                        {{/configPlantilla.mostrarPrecioNetoArticulo}}
+                    </tr>
+                </thead>
+                {{#articulos}}
+                <tr class="lineas-articulos">
+                    <td class="detalle-articulo monotype" align="right"><b>{{cantidadFormateadaImpresion}}</b></td>
+                    {{#configPlantilla.mostrarCodigoArticulo}}
+                    <td class="detalle-articulo codigoArticulo monotype" style="white-space: nowrap;
+                    overflow: hidden;"><b>{{codigoDeArticulo}}</b></td>
+                    {{/configPlantilla.mostrarCodigoArticulo}}
+                    <td class="detalle-articulo monotype" style="overflow: hidden;"><b>{{descripcionFormateadaImpresion}}</b></td>
+                    {{#configPlantilla.mostrardescuentoArticulo}}
+                    <td class="detalle-articulo monotype" align="center"><b>{{descuentoFormateadoImpresion}}</b></td>
+                    {{/configPlantilla.mostrardescuentoArticulo}}
+                    {{#configPlantilla.mostrarPrecioUnitarioArticulo}}
+                    <td class="moneda detalle-articulo monotype"><b>{{precioUnitarioFormateadoImpresion}}</b></td>
+                    {{/configPlantilla.mostrarPrecioUnitarioArticulo}}
+                    {{#configPlantilla.mostrarPrecioNetoArticulo}}
+                    <td class="moneda detalle-articulo monotype ultimatd"><b>{{precioNetoFormateadoImpresion}}</b></td>
+                    {{/configPlantilla.mostrarPrecioNetoArticulo}}
+                </tr>
+                {{/articulos}}
+            </table>
+            {{#ultimaPagina}}
+        </div>
+        {{/ultimaPagina}}
+        {{^ultimaPagina}}
+    </div>
+    {{/ultimaPagina}}
+    {{/paginas}}
+</body>
+
+</html>

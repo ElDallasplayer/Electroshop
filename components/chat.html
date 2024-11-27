@@ -23,13 +23,17 @@
                 <div class="row m-0 p-0 mensaje-recibido" style="height: auto !important;">
                     <p class="text-mensaje-recibido shadow-short">
                         Estamos aqui para ti!
-                        No dudes en consultar!
-                        Para una mejor atencion agregue su numero de tefono a la consulta.
+                        Podrias proporcionarnos unos datos basicos?
+                        <div class="container-form-mensaje">
+                            <input type="text" class="container-nombre-chat" placeholder="Nombre completo"/>
+                            <input type="text" class="container-celular-chat" placeholder="Ej: 1171876182"/>
+                            <button class="btn btn-success" id="boton-confirmar-datos-basicos">Confirmar</button>
+                        </div>
                     </p>
                 </div>
             </div>
         </div>
-        <div class="text-message-container shadow-short">
+        <div class="text-message-container shadow-short d-none">
             <div class="row p-0 m-0 w-100 justify-content-center contenedor-input-send">
                 <div class="col-10 p-0 m-0 d-flex justify-content-center align-items-center">
                     <input type="text" class="input-chat form-control" id="text-message">
@@ -45,3 +49,26 @@
 
   <script src="../js/components/chat.js" type="module"></script>
 </div>
+
+<style>
+    .container-form-mensaje{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: 1px solid var(--bs-gray-400);
+        margin: 1rem;
+        width: 80%;
+    }
+
+    .container-nombre-chat{
+        margin: 2px;
+    }
+
+    .container-celular-chat{
+        margin: 2px;
+    }
+
+    #boton-confirmar-datos-basicos{
+        margin: 2px;
+    }
+</style>
